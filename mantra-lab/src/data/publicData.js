@@ -32,9 +32,10 @@ export function playerSignalsFromDataset(player, dataset) {
   return validSignals(found?.signals) ? found.signals : null;
 }
 
-export async function loadPublicData(url = './src/data/generated/current-matchday.json') {
+export async function loadPublicData(url = './src/data/generated/current-matchday.json', fetchImpl = fetch, bustCache = false, now = Date.now()) {
   try {
-    const response = await fetch(url, { cache:'no-store' });
+    const requestedUrl = bustCache ? `${url}${url.includes('?') ? '&' : '?'}refresh=${now}` : url;
+    const response = await fetchImpl(requestedUrl, { cache:'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return { dataset: parseMatchdayDataset(await response.json()), error: null };
   } catch (error) {
