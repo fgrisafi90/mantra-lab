@@ -16,6 +16,15 @@ test('normalizza partite Lega Serie A e ricava la giornata', () => {
   });
 });
 
+test('non interpreta l id tecnico del matchSet come numero della giornata', () => {
+  const rows = [{
+    matchId:'m-tech', status:'SCHEDULED', matchDateUtc:'2026-09-27T18:45:00Z', roundName:'5',
+    home:{teamId:'h', mediaName:'Roma'}, away:{teamId:'a', mediaName:'Napoli'},
+    matchSet:{ matchSetId:'Football_MatchDay::4908' }
+  }];
+  assert.equal(normalizeMatches(rows)[0].matchday, 5);
+});
+
 test('seleziona la prima giornata con partite ancora da giocare', () => {
   const fixtures = [
     {id:'old',matchday:5,kickoff:'2026-09-20T18:00:00Z',played:true},

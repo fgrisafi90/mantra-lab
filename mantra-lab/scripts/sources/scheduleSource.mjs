@@ -29,7 +29,7 @@ export async function resolveSeasonId({ seasonName, fetchImpl = fetch } = {}) {
 }
 
 function matchdayOf(row) {
-  const provider = row?.matchSet?.providerId || row?.matchSet?.matchSetId || '';
+  const provider = row?.matchSet?.providerId || '';
   const p = String(provider).match(/MatchDay[:\s-]*(\d+)/i)?.[1];
   if (p) return Number(p);
   const r = String(row?.roundName || '').match(/(\d+)/)?.[1];
