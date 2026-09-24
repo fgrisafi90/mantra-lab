@@ -9,13 +9,17 @@ import { loadPublicData, isDatasetStale, resolveMatchdayDataUrl } from '../data/
 import { recommendLineups } from '../domain/recommendation.js';
 import { upsertSquadPlayer } from '../domain/squadEditor.js';
 import { sortCatalog } from '../data/playerCatalog.js';
+import { loadPlayerStats } from '../data/playerStatsData.js';
+import { buildPlayerStatsIndex, findPlayerStats } from '../domain/playerStats.js';
+import { renderPlayerAvatar } from '../ui/playerAvatar.js';
+import { renderPlayerPanel } from '../ui/playerPanel.js';
 import { loadSimulations, saveSimulations, createSimulation, duplicateSimulation } from '../storage/simulationStorage.js?v=20260924-1710';
 const CATALOG_URL='https://raw.githubusercontent.com/DemPago/fantacalcio-ai/main/knowledge_base/listoni/listone_mantra_2026_27.md';
 const GOALKEEPERS_URL='https://raw.githubusercontent.com/DemPago/fantacalcio-ai/main/knowledge_base/listoni/per_ruolo_mantra/mantra_ruolo_P.md';
 function catalogSlug(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 function parseMantraListMarkdown(markdown){const players=[];let roles=[];for(const rawLine of String(markdown||'').split(/\r?\n/)){const line=rawLine.trim();const heading=line.match(/^##\s+Ruolo:\s+(.+?)\s+\(/i);if(heading){roles=heading[1].split('/').map(x=>x.trim()).filter(Boolean);continue;}const prose=line.match(/^(.+?)\s+gioca nel\s+(.+?),\s+ruolo Mantra\s+(Por|P),\s+quotazione\s+(\d+)\s+crediti,\s+FVM\s+(\d+)\.?$/i);if(prose){const [,name,club,,quotationRaw,fvmRaw]=prose;players.push({catalogId:`${catalogSlug(club)}:${catalogSlug(name)}`,name:name.trim(),club:club.trim(),roles:['P'],quotation:Number(quotationRaw),fvm:Number(fvmRaw)});continue;}if(!line.startsWith('|')||/^\|\s*(Nome|[-:]+)/i.test(line))continue;const cells=line.split('|').slice(1,-1).map(x=>x.trim());if(cells.length<4||!roles.length)continue;const [name,club,quotationRaw,fvmRaw]=cells;if(!name||!club||!/^\d/.test(String(quotationRaw)))continue;players.push({catalogId:`${catalogSlug(club)}:${catalogSlug(name)}`,name,club,roles:[...roles],quotation:Number(quotationRaw),fvm:Number(fvmRaw)});}const unique=new Map();for(const player of players)unique.set(player.catalogId,player);return [...unique.values()].sort((a,b)=>a.name.localeCompare(b.name,'it'));}
 function filterCatalog(players,{search='',role='',club=''}={}){const needle=String(search).trim().toLocaleLowerCase('it');return players.filter(player=>(!needle||`${player.name} ${player.club}`.toLocaleLowerCase('it').includes(needle))&&(!role||player.roles.includes(role))&&(!club||player.club===club));}
-function playerToSquadDraft(player){return {name:player.name,club:player.club,roles:[...player.roles],purchasePrice:''};}
+function playerToSquadDraft(player,purchasePrice){return {name:player.name,club:player.club,roles:[...player.roles],...(purchasePrice==null||purchasePrice===''?{}:{purchasePrice:Number(purchasePrice)})};}
 async function loadPlayerCatalog(){try{const [response,goalkeepersResponse]=await Promise.all([fetch(CATALOG_URL,{cache:'no-store'}),fetch(GOALKEEPERS_URL,{cache:'no-store'})]);if(!response.ok)throw new Error(`HTTP ${response.status}`);const merged=[...parseMantraListMarkdown(await response.text()),...(goalkeepersResponse.ok?parseMantraListMarkdown(await goalkeepersResponse.text()):[])];const unique=new Map();for(const player of merged)unique.set(player.catalogId,player);const players=[...unique.values()].sort((a,b)=>a.name.localeCompare(b.name,'it'));if(!players.length)throw new Error('Listone vuoto');return {players,error:null};}catch(error){return {players:[],error};}}
 
 const catalogStyle=document.createElement('style');
@@ -49,9 +53,27 @@ let simCatalogRole = '';
 let simCatalogClub = '';
 let simCatalogSort = 'quotation-desc';
 let simCatalogLimit = 40;
+let playerStatsDataset={generatedAt:null,season:null,players:[]};
+let playerStatsIndex=buildPlayerStatsIndex(playerStatsDataset);
+let panelPlayer=null;
+let pendingCatalogPlayer=null;
 
 const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const playerById = id => squad.find(p => p.id === id);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&panelPlayer){panelPlayer=null;render();}});
+function resolvePlayerByUiId(id){
+  if(!id)return null;
+  const fromSquad=squad.find(p=>p.id===id); if(fromSquad)return fromSquad;
+  const fromCatalog=playerCatalog.find(p=>p.catalogId===id); if(fromCatalog)return fromCatalog;
+  for(const sim of simulations){const found=sim.players?.find(p=>p.id===id);if(found)return found;}
+  return null;
+}
+function openPlayerPanel(player){if(!player)return;panelPlayer=player;render();}
+function renderCatalogAddPanel(){
+  if(!pendingCatalogPlayer)return '';
+  const p=pendingCatalogPlayer;
+  return `<div class="modal-backdrop" data-close-catalog-add><form id="catalog-add-form" class="picker card catalog-add-dialog" role="dialog" aria-modal="true"><div class="section-head"><div><span class="eyebrow">AGGIUNGI ALLA ROSA</span><h3>${escapeHtml(p.name)}</h3><p class="muted">${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}</p></div><button type="button" class="icon-btn" data-close-catalog-add>×</button></div><label>Crediti spesi (facoltativi)<input name="price" type="number" min="0" step="1" inputmode="numeric" placeholder="Puoi inserirli anche dopo"></label><button class="primary-btn" type="submit">Aggiungi alla rosa</button></form></div>`;
+}
 
 function persist() { saveSquad(squad); }
 function persistSimulations() { saveSimulations(simulations); localStorage.setItem('mantra-lab:active-simulation', activeSimulationId); }
@@ -106,7 +128,7 @@ function renderPitch() {
         return `<button class="pitch-slot ${player?'filled':''}" data-slot="${slot.id}" style="left:${slot.x}%;top:${slot.y}%"><span class="slot-role">${slot.label}</span><strong>${player ? escapeHtml(player.name) : '+'}</strong>${player?`<small>${escapeHtml(player.roles.join('/'))}</small>`:''}</button>`;
       }).join('')}
     </div>
-    <aside class="squad-panel card"><div class="section-head"><div><span class="eyebrow">ROSA</span><h3>${squad.length ? 'Disponibili' : 'Nessun giocatore'}</h3></div><button class="ghost-btn" data-nav="rosa">Gestisci</button></div>${squad.length ? squad.map(p=>`<div class="mini-player"><div><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)}</span></div><div class="inline-actions"><b>${escapeHtml(p.roles.join('/'))}</b><button class="icon-btn" data-delete-real-player="${p.id}" aria-label="Elimina dalla rosa" title="Elimina dalla rosa">×</button></div></div>`).join('') : '<p class="muted">Aggiungi prima i giocatori nella sezione Rosa.</p>'}</aside>
+    <aside class="squad-panel card"><div class="section-head"><div><span class="eyebrow">ROSA</span><h3>${squad.length ? 'Disponibili' : 'Nessun giocatore'}</h3></div><button class="ghost-btn" data-nav="rosa">Gestisci</button></div>${squad.length ? squad.map(p=>`<div class="mini-player">${renderPlayerAvatar({name:p.name,avatarUrl:findPlayerStats(p,playerStatsIndex)?.avatarUrl,size:'sm'})}<button class="mini-player-main player-profile-trigger" type="button" data-player-profile="${p.id}"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)}</span></button><div class="inline-actions"><b>${escapeHtml(p.roles.join('/'))}</b><button class="icon-btn" data-delete-real-player="${p.id}" aria-label="Elimina dalla rosa" title="Elimina dalla rosa">×</button></div></div>`).join('') : '<p class="muted">Aggiungi prima i giocatori nella sezione Rosa.</p>'}</aside>
   </section>
   ${pickerSlot ? renderPicker(formation) : ''}`;
 }
@@ -132,7 +154,7 @@ function renderRosa() {
       ? '<div class="catalog-state warning">Listone automatico non disponibile. Puoi continuare a inserire giocatori manualmente.</div>'
       : `<div class="catalog-results">${visible.map(p=>{
           const owned=inSquad.has(`${p.club.toLowerCase()}::${p.name.toLowerCase()}`);
-          return `<article class="catalog-player"><div class="catalog-player-main"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}</span></div><div class="catalog-values"><span>Q ${p.quotation}</span><span>FVM ${p.fvm}</span></div><button class="${owned?'ghost-btn':'primary-btn'} catalog-add" data-add-catalog="${escapeHtml(p.catalogId)}" ${owned?'disabled':''}>${owned?'In rosa':'Aggiungi'}</button></article>`;
+          return `<article class="catalog-player">${renderPlayerAvatar({name:p.name,avatarUrl:findPlayerStats(p,playerStatsIndex)?.avatarUrl,size:'sm'})}<button class="catalog-player-main player-profile-trigger" type="button" data-player-profile="${escapeHtml(p.catalogId)}"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}</span></button><div class="catalog-values"><span>Q ${p.quotation}</span><span>FVM ${p.fvm}</span></div><button class="${owned?'ghost-btn':'primary-btn'} catalog-add" data-add-catalog="${escapeHtml(p.catalogId)}" ${owned?'disabled':''}>${owned?'In rosa':'Aggiungi'}</button></article>`;
         }).join('') || '<div class="empty-inline">Nessun giocatore trovato con questi filtri.</div>'}${filtered.length>visible.length?`<button class="ghost-btn catalog-more" id="catalog-more">Mostra altri ${Math.min(40,filtered.length-visible.length)}</button>`:''}</div>`;
   return `${hero('ROSA','La mia rosa','Questa è la rosa reale che userai durante il campionato. Il simulatore d’asta resta separato.')}
   <section class="squad-kpis"><article class="stat-card"><span>Giocatori</span><strong>${squad.length}</strong><small>nella rosa</small></article><article class="stat-card"><span>Budget iniziale</span><strong>${budgetSummary.budget??'—'}</strong><small>crediti impostati</small></article><article class="stat-card"><span>Crediti spesi</span><strong>${spent}</strong><small>totale acquisti</small></article><article class="stat-card accent"><span>Crediti residui</span><strong>${budgetSummary.remaining??'—'}</strong><small>${budgetSummary.budget==null?'inserisci il budget':'disponibili'}</small></article></section>
@@ -143,7 +165,7 @@ function renderRosa() {
     ${catalogState}
   </section>
   <section class="two-col"><form id="player-form" class="card form-card"><div class="section-head"><div><span class="eyebrow">${editing?'MODIFICA':'MANUALE'}</span><h3>${editing?'Modifica giocatore':'Aggiunta manuale'}</h3></div>${editing?'<button class="ghost-btn" type="button" id="cancel-edit">Annulla</button>':''}</div><label>Nome<input name="name" required placeholder="Es. Pulisic" value="${escapeHtml(editing?.name||'')}"></label><label>Squadra<input name="club" required placeholder="Es. Milan" value="${escapeHtml(editing?.club||'')}"></label><fieldset><legend>Ruoli Mantra</legend><div class="role-grid">${MANTRA_ROLES.map(r=>`<label class="role-chip"><input type="checkbox" name="role" value="${r}" ${editing?.roles?.includes(r)?'checked':''}><span>${r}</span></label>`).join('')}</div></fieldset><label>Crediti spesi<input name="price" type="number" min="0" step="1" inputmode="numeric" placeholder="Es. 25" value="${editing?.purchasePrice??''}"></label><button class="primary-btn" type="submit">${editing?'Salva modifiche':'Aggiungi manualmente'}</button></form>
-  <section class="card list-card"><div class="section-head"><div><span class="eyebrow">ROSA</span><h3>${squad.length} giocatori</h3></div><div class="inline-actions"><button class="ghost-btn" id="export-squad">Esporta</button><label class="ghost-btn file-label">Importa<input id="import-squad" type="file" accept="application/json"></label></div></div><div class="player-list">${squad.length?squad.map(p=>`<article class="player-row"><div><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}${p.purchasePrice!=null?` · ${p.purchasePrice} cr`:''}</span></div><div class="inline-actions"><button class="ghost-btn" data-edit-player="${p.id}">Modifica</button><button class="icon-btn" data-delete-player="${p.id}" aria-label="Elimina">×</button></div></article>`).join(''):'<div class="empty-inline">La rosa è vuota. Aggiungi giocatori dal listone qui sopra.</div>'}</div></section></section>`;
+  <section class="card list-card"><div class="section-head"><div><span class="eyebrow">ROSA</span><h3>${squad.length} giocatori</h3></div><div class="inline-actions"><button class="ghost-btn" id="export-squad">Esporta</button><label class="ghost-btn file-label">Importa<input id="import-squad" type="file" accept="application/json"></label></div></div><div class="player-list">${squad.length?squad.map(p=>`<article class="player-row">${renderPlayerAvatar({name:p.name,avatarUrl:findPlayerStats(p,playerStatsIndex)?.avatarUrl,size:'sm'})}<button class="player-row-main player-profile-trigger" type="button" data-player-profile="${p.id}"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}${p.purchasePrice!=null?` · ${p.purchasePrice} cr`:''}</span></button><div class="inline-actions"><button class="ghost-btn" data-edit-player="${p.id}">Modifica</button><button class="icon-btn" data-delete-player="${p.id}" aria-label="Elimina">×</button></div></article>`).join(''):'<div class="empty-inline">La rosa è vuota. Aggiungi giocatori dal listone qui sopra.</div>'}</div></section></section>`;
 }
 function renderSimulator() {
   const sim=currentSimulation();
@@ -155,12 +177,12 @@ function renderSimulator() {
   const inSim=new Set(sim.players.map(p=>`${p.club.toLowerCase()}::${p.name.toLowerCase()}`));
   const spent=sim.players.reduce((sum,p)=>sum+(Number.isFinite(Number(p.purchasePrice))?Number(p.purchasePrice):0),0);
   const options=simulations.map(item=>`<option value="${item.id}" ${item.id===activeSimulationId?'selected':''}>${escapeHtml(item.name)}</option>`).join('');
-  const catalogState=playerCatalogLoading ? '<div class="catalog-state">Caricamento listone Mantra…</div>' : playerCatalogError ? '<div class="catalog-state warning">Listone non disponibile.</div>' : `<div class="catalog-results">${visible.map(p=>{const owned=inSim.has(`${p.club.toLowerCase()}::${p.name.toLowerCase()}`);return `<article class="catalog-player"><div class="catalog-player-main"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}</span></div><div class="catalog-values"><span>Q ${p.quotation}</span><span>FVM ${p.fvm}</span></div><button class="${owned?'ghost-btn':'primary-btn'} catalog-add" data-sim-add-catalog="${escapeHtml(p.catalogId)}" ${owned?'disabled':''}>${owned?'Inserito':'Aggiungi'}</button></article>`;}).join('')||'<div class="empty-inline">Nessun giocatore trovato.</div>'}${filtered.length>visible.length?`<button class="ghost-btn catalog-more" id="sim-catalog-more">Mostra altri ${Math.min(40,filtered.length-visible.length)}</button>`:''}</div>`;
+  const catalogState=playerCatalogLoading ? '<div class="catalog-state">Caricamento listone Mantra…</div>' : playerCatalogError ? '<div class="catalog-state warning">Listone non disponibile.</div>' : `<div class="catalog-results">${visible.map(p=>{const owned=inSim.has(`${p.club.toLowerCase()}::${p.name.toLowerCase()}`);return `<article class="catalog-player">${renderPlayerAvatar({name:p.name,avatarUrl:findPlayerStats(p,playerStatsIndex)?.avatarUrl,size:'sm'})}<button class="catalog-player-main player-profile-trigger" type="button" data-player-profile="${escapeHtml(p.catalogId)}"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}</span></button><div class="catalog-values"><span>Q ${p.quotation}</span><span>FVM ${p.fvm}</span></div><button class="${owned?'ghost-btn':'primary-btn'} catalog-add" data-sim-add-catalog="${escapeHtml(p.catalogId)}" ${owned?'disabled':''}>${owned?'Inserito':'Aggiungi'}</button></article>`;}).join('')||'<div class="empty-inline">Nessun giocatore trovato.</div>'}${filtered.length>visible.length?`<button class="ghost-btn catalog-more" id="sim-catalog-more">Mostra altri ${Math.min(40,filtered.length-visible.length)}</button>`:''}</div>`;
   return `${hero('SIMULATORE D’ASTA','Prova la tua rosa','Crea la rosa demo, schiera i giocatori e ritrova tutto come lo hai lasciato. Salvataggio automatico attivo.')}
   <section class="card"><div class="section-head"><div><span class="eyebrow">SIMULAZIONI SALVATE</span><h3>${escapeHtml(sim.name)}</h3></div><div class="inline-actions"><button class="primary-btn" id="sim-new">Nuova</button><button class="ghost-btn" id="sim-duplicate">Duplica</button><button class="ghost-btn" id="sim-save">Salva</button><button class="icon-btn" id="sim-delete" aria-label="Elimina simulazione">×</button></div></div><label>Simulazione<select id="sim-select">${options}</select></label></section>
   <section class="squad-kpis"><article class="stat-card"><span>Giocatori</span><strong>${sim.players.length}</strong><small>nella prova</small></article><article class="stat-card"><span>Spesa</span><strong>${spent}</strong><small>crediti inseriti</small></article><article class="stat-card accent"><span>Modulo</span><strong>${escapeHtml(sim.formationId)}</strong><small>formazione demo</small></article></section>
   <section class="toolbar card"><label>Modulo <select id="sim-formation-select">${FORMATIONS.map(f=>`<option value="${f.id}" ${f.id===sim.formationId?'selected':''}>${f.name}</option>`).join('')}</select></label><button class="ghost-btn" id="sim-clear-lineup">Svuota campo</button><button class="ghost-btn" id="sim-clear-squad">Svuota rosa demo</button></section>
-  <section class="formation-layout"><div class="pitch" aria-label="Campo simulatore"><div class="pitch-line half"></div><div class="pitch-circle"></div>${formation.slots.map(slot=>{const player=sim.players.find(p=>p.id===sim.lineup[slot.id]);return `<button class="pitch-slot ${player?'filled':''}" data-sim-slot="${slot.id}" style="left:${slot.x}%;top:${slot.y}%"><span class="slot-role">${slot.label}</span><strong>${player?escapeHtml(player.name):'+'}</strong>${player?`<small>${escapeHtml(player.roles.join('/'))}</small>`:''}</button>`;}).join('')}</div><aside class="squad-panel card"><div class="section-head"><div><span class="eyebrow">ROSA DEMO</span><h3>${sim.players.length} giocatori</h3></div></div>${sim.players.length?sim.players.map(p=>`<div class="mini-player"><div><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)}</span></div><div class="inline-actions"><b>${escapeHtml(p.roles.join('/'))}</b><button class="icon-btn" data-sim-delete-player="${p.id}" aria-label="Elimina dalla simulazione" title="Elimina dalla simulazione">×</button></div></div>`).join(''):'<p class="muted">Aggiungi giocatori dal listone qui sotto.</p>'}</aside></section>
+  <section class="formation-layout"><div class="pitch" aria-label="Campo simulatore"><div class="pitch-line half"></div><div class="pitch-circle"></div>${formation.slots.map(slot=>{const player=sim.players.find(p=>p.id===sim.lineup[slot.id]);return `<button class="pitch-slot ${player?'filled':''}" data-sim-slot="${slot.id}" style="left:${slot.x}%;top:${slot.y}%"><span class="slot-role">${slot.label}</span><strong>${player?escapeHtml(player.name):'+'}</strong>${player?`<small>${escapeHtml(player.roles.join('/'))}</small>`:''}</button>`;}).join('')}</div><aside class="squad-panel card"><div class="section-head"><div><span class="eyebrow">ROSA DEMO</span><h3>${sim.players.length} giocatori</h3></div></div>${sim.players.length?sim.players.map(p=>`<div class="mini-player">${renderPlayerAvatar({name:p.name,avatarUrl:findPlayerStats(p,playerStatsIndex)?.avatarUrl,size:'sm'})}<button class="mini-player-main player-profile-trigger" type="button" data-player-profile="${p.id}"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)}</span></button><div class="inline-actions"><b>${escapeHtml(p.roles.join('/'))}</b><button class="icon-btn" data-sim-delete-player="${p.id}" aria-label="Elimina dalla simulazione" title="Elimina dalla simulazione">×</button></div></div>`).join(''):'<p class="muted">Aggiungi giocatori dal listone qui sotto.</p>'}</aside></section>
   ${simPickerSlot?renderSimulatorPicker(formation,sim):''}
   <section class="catalog-card card"><div class="section-head"><div><span class="eyebrow">LISTONE MANTRA 2026/27</span><h3>Aggiungi alla simulazione</h3></div></div><div class="catalog-filters"><label>Cerca<input id="sim-catalog-search" placeholder="Nome o squadra" value="${escapeHtml(simCatalogSearch)}"></label><label>Ruolo<select id="sim-catalog-role"><option value="">Tutti</option>${MANTRA_ROLES.map(r=>`<option value="${r}" ${simCatalogRole===r?'selected':''}>${r}</option>`).join('')}</select></label><label>Squadra<select id="sim-catalog-club"><option value="">Tutte</option>${clubs.map(c=>`<option value="${escapeHtml(c)}" ${simCatalogClub===c?'selected':''}>${escapeHtml(c)}</option>`).join('')}</select></label><label>Ordina<select id="sim-catalog-sort"><option value="quotation-desc" ${simCatalogSort==='quotation-desc'?'selected':''}>Quotazione ↓</option><option value="name-asc" ${simCatalogSort==='name-asc'?'selected':''}>Nome A-Z</option></select></label></div><div class="catalog-meta">${playerCatalogError?'Fonte non raggiungibile':`${filtered.length} risultati`}</div>${catalogState}</section>`;
 }
@@ -180,11 +202,16 @@ function renderAsta() {
 
 function render() {
   const page = active==='formazione'?renderPitch():active==='rosa'?renderRosa():active==='simulatore'?renderSimulator():active==='asta'?renderAsta():renderGiornata();
-  app.innerHTML = shell(page);
+  app.innerHTML = shell(page) + (panelPlayer?renderPlayerPanel(panelPlayer,findPlayerStats(panelPlayer,playerStatsIndex)):'') + renderCatalogAddPanel();
   bindEvents();
 }
 
 function bindEvents() {
+  app.querySelectorAll('[data-player-profile]').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();openPlayerPanel(resolvePlayerByUiId(el.dataset.playerProfile));}));
+  app.querySelectorAll('[data-close-player-panel]').forEach(el=>el.addEventListener('click',e=>{if(e.target===el||el.matches('.icon-btn')){panelPlayer=null;render();}}));
+  app.querySelectorAll('[data-avatar-img]').forEach(img=>img.addEventListener('error',()=>{img.hidden=true;}));
+  app.querySelectorAll('[data-close-catalog-add]').forEach(el=>el.addEventListener('click',e=>{if(e.target===el||el.matches('.icon-btn')){pendingCatalogPlayer=null;render();}}));
+  app.querySelector('#catalog-add-form')?.addEventListener('submit',e=>{e.preventDefault();if(!pendingCatalogPlayer)return;const fd=new FormData(e.currentTarget);const raw=String(fd.get('price')??'').trim();const price=raw===''?undefined:Number(raw);if(price!=null&&(!Number.isFinite(price)||price<0)){alert('Inserisci un numero di crediti valido.');return;}squad=upsertSquadPlayer(squad,playerToSquadDraft(pendingCatalogPlayer,price));pendingCatalogPlayer=null;persist();render();});
   app.querySelectorAll('[data-nav]').forEach(btn => btn.addEventListener('click', () => { active=btn.dataset.nav; pickerSlot=null; render(); }));
   app.querySelector('#formation-select')?.addEventListener('change', e => { formationId=e.target.value; localStorage.setItem('mantra-lab:formation', formationId); lineup={}; render(); });
   app.querySelector('#clear-lineup')?.addEventListener('click', () => { lineup={}; render(); });
@@ -204,8 +231,7 @@ function bindEvents() {
     if(!player)return;
     const exists=squad.some(p=>p.name.toLowerCase()===player.name.toLowerCase() && p.club.toLowerCase()===player.club.toLowerCase());
     if(exists)return;
-    squad=upsertSquadPlayer(squad,playerToSquadDraft(player));
-    persist();render();
+    pendingCatalogPlayer=player;render();
   }));
   app.querySelector('#cancel-edit')?.addEventListener('click',()=>{editingPlayerId=null;render();});
   app.querySelectorAll('[data-edit-player]').forEach(btn=>btn.addEventListener('click',()=>{editingPlayerId=btn.dataset.editPlayer;render();}));
@@ -246,6 +272,12 @@ async function refreshPlayerCatalog() {
   playerCatalog=result.players; playerCatalogError=result.error; playerCatalogLoading=false; render();
 }
 
+async function refreshPlayerStats(){
+  playerStatsDataset=await loadPlayerStats({pathname:location.pathname});
+  playerStatsIndex=buildPlayerStatsIndex(playerStatsDataset);
+  render();
+}
+
 async function refreshPublicData(force = false) {
   publicDataLoading=true; publicDataError=null; render();
   const result=await loadPublicData(resolveMatchdayDataUrl(location.pathname), fetch, force);
@@ -254,4 +286,5 @@ async function refreshPublicData(force = false) {
 
 render();
 refreshPlayerCatalog();
+refreshPlayerStats();
 refreshPublicData();

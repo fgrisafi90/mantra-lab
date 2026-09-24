@@ -43,3 +43,15 @@ test('asta mostra il budget reale residuo', async () => {
   assert.match(js, /BUDGET ASTA/);
   assert.match(js, /Disponibili/);
 });
+
+test('player profile panel is wired from rosa and catalog', async () => {
+  const js=await readFile('src/app/main.js','utf8');
+  assert.match(js,/data-player-profile/);
+  assert.match(js,/openPlayerPanel/);
+});
+
+test('catalog add offers optional purchase price', async () => {
+  const js=await readFile('src/app/main.js','utf8');
+  assert.match(js,/catalog-add-form/);
+  assert.match(js,/Crediti spesi \(facoltativi\)/);
+});
