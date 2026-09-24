@@ -32,6 +32,13 @@ export function playerSignalsFromDataset(player, dataset) {
   return validSignals(found?.signals) ? found.signals : null;
 }
 
+
+export function resolveMatchdayDataUrl(pathname = '') {
+  return String(pathname).includes('/dist/')
+    ? '../src/data/generated/current-matchday.json'
+    : './src/data/generated/current-matchday.json';
+}
+
 export async function loadPublicData(url = './src/data/generated/current-matchday.json', fetchImpl = fetch, bustCache = false, now = Date.now()) {
   try {
     const requestedUrl = bustCache ? `${url}${url.includes('?') ? '&' : '?'}refresh=${now}` : url;

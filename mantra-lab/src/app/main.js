@@ -5,7 +5,7 @@ import { MANTRA_ROLES } from '../domain/types.js';
 import { analyzeSquadCoverage } from '../domain/squadCoverage.js';
 import { loadSquad, saveSquad } from '../storage/squadStorage.js';
 import { exportSquad, importSquad } from '../storage/transfer.js';
-import { loadPublicData, isDatasetStale } from '../data/publicData.js';
+import { loadPublicData, isDatasetStale, resolveMatchdayDataUrl } from '../data/publicData.js';
 import { recommendLineups } from '../domain/recommendation.js';
 import { upsertSquadPlayer } from '../domain/squadEditor.js';
 import { sortCatalog } from '../data/playerCatalog.js';
@@ -243,7 +243,7 @@ async function refreshPlayerCatalog() {
 
 async function refreshPublicData(force = false) {
   publicDataLoading=true; publicDataError=null; render();
-  const result=await loadPublicData('./src/data/generated/current-matchday.json', fetch, force);
+  const result=await loadPublicData(resolveMatchdayDataUrl(location.pathname), fetch, force);
   publicDataset=result.dataset; publicDataError=result.error; publicDataLoading=false; render();
 }
 
