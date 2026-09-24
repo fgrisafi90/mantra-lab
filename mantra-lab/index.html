@@ -6,14 +6,38 @@
   <meta name="theme-color" content="#07121b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Mantra Lab" />
+  <meta name="apple-mobile-web-app-title" content="FG Mantra" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="stylesheet" href="./src/styles/app.css?v=20260924-playerstats" />
-  <title>Mantra Lab</title>
+  <link rel="stylesheet" href="./src/styles/app.css?v=20260925-0055" />
+  <style>
+    .topbar>div:first-child{
+      width:240px;
+      height:72px;
+      background:url('./assets/fg-mantra-logo.svg?v=20260925-0055') left center/contain no-repeat;
+      flex:0 0 auto;
+    }
+    .topbar>div:first-child>*{display:none!important}
+    .catalog-player{
+      display:grid!important;
+      grid-template-columns:auto minmax(0,1fr) auto auto!important;
+      gap:12px!important;
+      align-items:center!important;
+    }
+    .catalog-player-main{min-width:0!important;width:auto!important;text-align:left!important}
+    .catalog-values{display:flex!important;gap:6px!important;white-space:nowrap!important}
+    .catalog-add{width:auto!important;min-width:88px!important;max-width:140px!important}
+    @media(max-width:700px){
+      .topbar>div:first-child{width:165px;height:54px}
+      .catalog-player{grid-template-columns:auto minmax(0,1fr) auto!important}
+      .catalog-values{grid-column:2!important}
+      .catalog-add{grid-column:3!important;grid-row:1 / span 2!important;width:auto!important;min-width:76px!important}
+    }
+  </style>
+  <title>FG Mantra</title>
 </head>
 <body>
   <div id="app"></div>
-  <script type="module" src="./src/app/main.js?v=20260924-playerstats"></script>
+  <script type="module" src="./src/app/main.js?v=20260925-0055"></script>
 </body>
 </html>
