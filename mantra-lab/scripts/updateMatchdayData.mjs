@@ -18,7 +18,7 @@ try {
   process.exit(0);
 }
 
-const matchday=selectActiveMatchday(context.fixtures);
+const matchday=selectActiveMatchday(context.fixtures, now);
 if (!matchday) {
   console.log('No active Serie A matchday found.');
   process.exit(0);

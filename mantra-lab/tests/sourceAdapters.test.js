@@ -22,7 +22,18 @@ test('seleziona la prima giornata con partite ancora da giocare', () => {
     {id:'a',matchday:6,kickoff:'2026-09-26T16:00:00Z',played:false},
     {id:'b',matchday:7,kickoff:'2026-10-03T16:00:00Z',played:false}
   ];
-  assert.equal(selectActiveMatchday(fixtures), 6);
+  assert.equal(selectActiveMatchday(fixtures, '2026-09-25T12:00:00Z'), 6);
+});
+
+
+
+test('tra due giornate mantiene l ultima giornata completata fino al giorno prima della successiva', () => {
+  const fixtures = [
+    {id:'g5',matchday:5,kickoff:'2026-09-20T18:45:00Z',played:true},
+    {id:'g6',matchday:6,kickoff:'2026-10-10T13:00:00Z',played:false}
+  ];
+  assert.equal(selectActiveMatchday(fixtures, '2026-09-24T12:00:00Z'), 5);
+  assert.equal(selectActiveMatchday(fixtures, '2026-10-09T12:00:00Z'), 6);
 });
 
 test('normalizza classifica e rank da stats', () => {

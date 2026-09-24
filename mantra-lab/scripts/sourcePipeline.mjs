@@ -7,7 +7,7 @@ function standingRank(standings, teamId) {
 }
 
 export async function buildMatchdayDataset({ context, players, generatedAt = new Date().toISOString(), lineupFetcher }) {
-  const matchday = selectActiveMatchday(context.fixtures);
+  const matchday = selectActiveMatchday(context.fixtures, generatedAt);
   if (!matchday) throw new Error('Nessuna giornata Serie A attiva trovata');
   const fixtures = context.fixtures.filter(f => f.matchday === matchday);
   const lineupPlayers = {};

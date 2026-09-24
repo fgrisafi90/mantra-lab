@@ -52,11 +52,46 @@ export function normalizeMatches(rows = []) {
   })).filter(x => x.id && x.matchday && x.kickoff);
 }
 
-export function selectActiveMatchday(fixtures = []) {
-  const pending = fixtures.filter(f => !f.played && Number.isInteger(f.matchday) && Number.isFinite(new Date(f.kickoff).getTime()));
-  if (!pending.length) return null;
-  pending.sort((a,b) => new Date(a.kickoff).getTime() - new Date(b.kickoff).getTime() || a.matchday - b.matchday);
-  return pending[0].matchday;
+function romeDateKey(input) {
+  const d = new Date(input);
+  if (!Number.isFinite(d.getTime())) return null;
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone:'Europe/Rome', year:'numeric', month:'2-digit', day:'2-digit'
+  }).formatToParts(d);
+  const o = Object.fromEntries(parts.map(p => [p.type, p.value]));
+  return `${o.year}-${o.month}-${o.day}`;
+}
+
+function previousDateKey(key) {
+  const [y,m,d] = key.split('-').map(Number);
+  return new Date(Date.UTC(y,m-1,d-1,12)).toISOString().slice(0,10);
+}
+
+export function selectActiveMatchday(fixtures = [], now = new Date().toISOString()) {
+  const valid = fixtures.filter(f => Number.isInteger(f.matchday) && Number.isFinite(new Date(f.kickoff).getTime()));
+  const pending = valid.filter(f => !f.played)
+    .sort((a,b) => new Date(a.kickoff).getTime() - new Date(b.kickoff).getTime() || a.matchday - b.matchday);
+  if (!pending.length) {
+    const playedDays = valid.filter(f => f.played).map(f => f.matchday);
+    return playedDays.length ? Math.max(...playedDays) : null;
+  }
+
+  const next = pending[0];
+  const nextDate = romeDateKey(next.kickoff);
+  const today = romeDateKey(now);
+  if (today && nextDate && today >= previousDateKey(nextDate)) return next.matchday;
+
+  const byDay = new Map();
+  for (const fixture of valid) {
+    if (!byDay.has(fixture.matchday)) byDay.set(fixture.matchday, []);
+    byDay.get(fixture.matchday).push(fixture);
+  }
+  const completedDays = [...byDay.entries()]
+    .filter(([,rows]) => rows.length && rows.every(f => f.played))
+    .map(([day]) => day)
+    .filter(day => day < next.matchday);
+
+  return completedDays.length ? Math.max(...completedDays) : next.matchday;
 }
 
 export function normalizeStandings(rows = []) {
