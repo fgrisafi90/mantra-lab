@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T20:27:15.658Z",
+  "generatedAt": "2026-09-24T22:04:48.174Z",
   "season": "2026/2027",
   "matchday": 5,
   "fixtures": [
@@ -2458,24 +2458,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
-      "name": "Raimondo",
-      "club": "Frosinone",
-      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
-      "signals": {
-        "availability": 100,
-        "expectedMinutes": 95,
-        "recentForm": 50,
-        "opponentContext": 61.2,
-        "bonusPotential": 70.84070796460176,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 45.0353982300885,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::b629fb0c40f34d83864423c077fc8e9a",
       "name": "Calvani",
       "club": "Frosinone",
@@ -2507,6 +2489,24 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
+      "name": "Raimondo",
+      "club": "Frosinone",
+      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
+      "signals": {
+        "availability": 100,
+        "expectedMinutes": 95,
+        "recentForm": 50,
+        "opponentContext": 61.2,
+        "bonusPotential": 70.84070796460176,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 45.0353982300885,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -4762,24 +4762,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
-      "name": "Piccoli",
-      "club": "Bologna",
-      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
-      "signals": {
-        "availability": 100,
-        "expectedMinutes": 95,
-        "recentForm": 50,
-        "opponentContext": 75.6,
-        "bonusPotential": 45.574412532637076,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 38.947780678851174,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
       "name": "Bernardeschi",
       "club": "Bologna",
@@ -4793,6 +4775,24 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 46.69072164948454,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
+      "name": "Piccoli",
+      "club": "Bologna",
+      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
+      "signals": {
+        "availability": 100,
+        "expectedMinutes": 95,
+        "recentForm": 50,
+        "opponentContext": 75.6,
+        "bonusPotential": 45.574412532637076,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 38.947780678851174,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5482,24 +5482,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::e7c5f1fc7dab402bbdfbc2d47096fb30",
-      "name": "Fagioli",
-      "club": "Fiorentina",
-      "teamId": "serie-a::Football_Team::5bce12d5bd864c2297695d970f92576d",
-      "signals": {
-        "availability": 100,
-        "expectedMinutes": 95,
-        "recentForm": 50,
-        "opponentContext": 63.599999999999994,
-        "bonusPotential": 42.269230769230774,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 38.87692307692308,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::c590f7d118754da79d5abc5618322b51",
       "name": "Dodô",
       "club": "Fiorentina",
@@ -5515,6 +5497,24 @@
         "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": true
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::e7c5f1fc7dab402bbdfbc2d47096fb30",
+      "name": "Fagioli",
+      "club": "Fiorentina",
+      "teamId": "serie-a::Football_Team::5bce12d5bd864c2297695d970f92576d",
+      "signals": {
+        "availability": 100,
+        "expectedMinutes": 95,
+        "recentForm": 50,
+        "opponentContext": 63.599999999999994,
+        "bonusPotential": 42.269230769230774,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 38.87692307692308,
+        "unavailable": false,
+        "majorDoubt": false
       }
     },
     {
@@ -8204,13 +8204,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-09-24T20:27:15.658Z",
+      "retrievedAt": "2026-09-24T22:04:48.174Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-09-24T20:27:15.658Z",
+      "retrievedAt": "2026-09-24T22:04:48.174Z",
       "status": "ok"
     }
   ]
