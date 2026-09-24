@@ -227,7 +227,9 @@ function bindEvents() {
   app.querySelector('#sim-catalog-sort')?.addEventListener('change',e=>{simCatalogSort=e.target.value;simCatalogLimit=40;render();});
   app.querySelector('#sim-catalog-more')?.addEventListener('click',()=>{simCatalogLimit+=40;render();});
   app.querySelectorAll('[data-sim-add-catalog]').forEach(btn=>btn.addEventListener('click',()=>{const source=playerCatalog.find(p=>p.catalogId===btn.dataset.simAddCatalog);if(!source)return;const sim=currentSimulation();if(sim.players.some(p=>p.name.toLowerCase()===source.name.toLowerCase()&&p.club.toLowerCase()===source.club.toLowerCase()))return;const players=upsertSquadPlayer(sim.players,playerToSquadDraft(source));replaceCurrentSimulation({...sim,players});render();}));
-  app.querySelector('#refresh-public-data')?.addEventListener('click', () => refreshPublicData(true));
+  app.querySelector('#refresh-public-data')?.addEventListener('click', () => {
+    window.open('https://github.com/fgrisafi90/mantra-lab/actions/workflows/update-data.yml', '_blank', 'noopener');
+  });
   app.querySelectorAll('[data-use-recommendation]').forEach(btn => btn.addEventListener('click', () => {
     const recommendations = publicDataset ? recommendLineups(squad, publicDataset) : [];
     const selected = recommendations[Number(btn.dataset.useRecommendation)];
