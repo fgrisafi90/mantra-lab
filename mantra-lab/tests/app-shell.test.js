@@ -55,3 +55,10 @@ test('catalog add offers optional purchase price', async () => {
   assert.match(js,/catalog-add-form/);
   assert.match(js,/Crediti spesi \(facoltativi\)/);
 });
+
+
+test('catalog with avatars keeps player, values and add button aligned', async () => {
+  const js=await readFile('src/app/main.js','utf8');
+  assert.match(js,/\.catalog-player\{display:grid;grid-template-columns:auto minmax\(0,1fr\) auto auto/);
+  assert.match(js,/@media\(max-width:700px\)[\s\S]*?\.catalog-player\{grid-template-columns:auto minmax\(0,1fr\) auto\}/);
+});
