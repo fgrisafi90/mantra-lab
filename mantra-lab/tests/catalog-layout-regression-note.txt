@@ -1,0 +1,1 @@
+Regression guard: catalog rows with player avatars require .catalog-player to use display:grid with four desktop columns (avatar, player, values, action) and three mobile columns. Budget controls must remain present in renderRosa.
