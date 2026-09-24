@@ -29,11 +29,14 @@ export async function resolveSeasonId({ seasonName, fetchImpl = fetch } = {}) {
 }
 
 function matchdayOf(row) {
+  const round = String(row?.roundName || '').match(/(\d+)/)?.[1];
+  const roundNumber = round ? Number(round) : null;
+  if (roundNumber && roundNumber >= 1 && roundNumber <= 38) return roundNumber;
+
   const provider = row?.matchSet?.providerId || '';
   const p = String(provider).match(/MatchDay[:\s-]*(\d+)/i)?.[1];
-  if (p) return Number(p);
-  const r = String(row?.roundName || '').match(/(\d+)/)?.[1];
-  return r ? Number(r) : null;
+  const providerNumber = p ? Number(p) : null;
+  return providerNumber && providerNumber >= 1 && providerNumber <= 38 ? providerNumber : null;
 }
 
 export function normalizeMatches(rows = []) {

@@ -20,7 +20,7 @@ test('non interpreta l id tecnico del matchSet come numero della giornata', () =
   const rows = [{
     matchId:'m-tech', status:'SCHEDULED', matchDateUtc:'2026-09-27T18:45:00Z', roundName:'5',
     home:{teamId:'h', mediaName:'Roma'}, away:{teamId:'a', mediaName:'Napoli'},
-    matchSet:{ matchSetId:'Football_MatchDay::4908' }
+    matchSet:{ providerId:'Football_MatchDay::4908' }
   }];
   assert.equal(normalizeMatches(rows)[0].matchday, 5);
 });
