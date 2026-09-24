@@ -1,0 +1,49 @@
+name: Update matchday data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-matchday-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: mantra-lab
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update matchday dataset
+        env:
+          FORCE_REFRESH: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+        run: node scripts/updateMatchdayData.mjs
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- src/data/generated/current-matchday.json; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add src/data/generated/current-matchday.json
+          git commit -m "Update matchday data"
+          git push
