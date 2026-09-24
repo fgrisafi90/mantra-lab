@@ -28,21 +28,37 @@ export async function resolveSeasonId({ seasonName, fetchImpl = fetch } = {}) {
   return { seasonId: season.seasonId, seasonName: season.seasonName };
 }
 
-function matchdayOf(row) {
+function explicitMatchdayOf(row) {
   const round = String(row?.roundName || '').match(/(\d+)/)?.[1];
   const roundNumber = round ? Number(round) : null;
-  if (roundNumber && roundNumber >= 1 && roundNumber <= 38) return roundNumber;
+  return roundNumber && roundNumber >= 1 && roundNumber <= 38 ? roundNumber : null;
+}
 
+function technicalMatchdayKey(row) {
   const provider = row?.matchSet?.providerId || '';
   const p = String(provider).match(/MatchDay[:\s-]*(\d+)/i)?.[1];
-  const providerNumber = p ? Number(p) : null;
-  return providerNumber && providerNumber >= 1 && providerNumber <= 38 ? providerNumber : null;
+  return p ? Number(p) : null;
+}
+
+function inferTechnicalMatchdays(rows = []) {
+  const groups = new Map();
+  for (const row of rows) {
+    const key = technicalMatchdayKey(row);
+    if (!key) continue;
+    const kickoff = new Date(row?.matchDateUtc).getTime();
+    if (!Number.isFinite(kickoff)) continue;
+    const current = groups.get(key);
+    if (!current || kickoff < current) groups.set(key, kickoff);
+  }
+  const ordered = [...groups.entries()].sort((a,b) => a[1] - b[1] || a[0] - b[0]);
+  return new Map(ordered.slice(0,38).map(([key], index) => [key, index + 1]));
 }
 
 export function normalizeMatches(rows = []) {
+  const inferred = inferTechnicalMatchdays(rows);
   return rows.map(row => ({
     id: row.matchId,
-    matchday: matchdayOf(row),
+    matchday: explicitMatchdayOf(row) ?? inferred.get(technicalMatchdayKey(row)) ?? null,
     kickoff: row.matchDateUtc,
     home: teamName(row.home),
     away: teamName(row.away),

@@ -25,6 +25,28 @@ test('non interpreta l id tecnico del matchSet come numero della giornata', () =
   assert.equal(normalizeMatches(rows)[0].matchday, 5);
 });
 
+
+
+test('ricava la giornata dall ordine cronologico dei matchSet tecnici quando roundName manca', () => {
+  const dates=['2026-08-22','2026-08-29','2026-09-05','2026-09-12','2026-09-19'];
+  const rows = [];
+  for (let day = 1; day <= 5; day++) {
+    for (let match = 0; match < 2; match++) {
+      rows.push({
+        matchId:`g${day}-m${match}`,
+        status:day < 5 ? 'FINISHED' : 'SCHEDULED',
+        matchDateUtc:`${dates[day-1]}T1${match}:00:00Z`,
+        roundName:'',
+        home:{teamId:`h${day}${match}`, mediaName:'Casa'},
+        away:{teamId:`a${day}${match}`, mediaName:'Trasferta'},
+        matchSet:{ providerId:`Football_MatchDay::${4903 + day}` }
+      });
+    }
+  }
+  const matches = normalizeMatches(rows);
+  assert.equal(matches.length, 10);
+  assert.equal(matches.find(x => x.id === 'g5-m0').matchday, 5);
+});
 test('seleziona la prima giornata con partite ancora da giocare', () => {
   const fixtures = [
     {id:'old',matchday:5,kickoff:'2026-09-20T18:00:00Z',played:true},
