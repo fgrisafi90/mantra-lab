@@ -8,7 +8,7 @@ import { exportSquad, importSquad } from '../storage/transfer.js';
 import { loadPublicData, isDatasetStale, resolveMatchdayDataUrl } from '../data/publicData.js';
 import { recommendLineups } from '../domain/recommendation.js';
 import { upsertSquadPlayer } from '../domain/squadEditor.js';
-import { sortCatalog, filterCatalog, playerToSquadDraft, loadPlayerCatalog, reconcileOfficialRoles } from '../data/playerCatalog.js';
+import { sortCatalog, filterCatalog, playerToSquadDraft, loadPlayerCatalog, reconcileOfficialRoles } from '../data/playerCatalog.js?v=20260925-official-v2';
 import { loadPlayerStats } from '../data/playerStatsData.js';
 import { buildPlayerStatsIndex, findPlayerStats } from '../domain/playerStats.js';
 import { renderPlayerAvatar } from '../ui/playerAvatar.js';
