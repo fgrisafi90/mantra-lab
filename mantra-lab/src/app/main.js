@@ -8,20 +8,12 @@ import { exportSquad, importSquad } from '../storage/transfer.js';
 import { loadPublicData, isDatasetStale, resolveMatchdayDataUrl } from '../data/publicData.js';
 import { recommendLineups } from '../domain/recommendation.js';
 import { upsertSquadPlayer } from '../domain/squadEditor.js';
-import { sortCatalog } from '../data/playerCatalog.js';
+import { sortCatalog, filterCatalog, playerToSquadDraft, loadPlayerCatalog, reconcileOfficialRoles } from '../data/playerCatalog.js';
 import { loadPlayerStats } from '../data/playerStatsData.js';
 import { buildPlayerStatsIndex, findPlayerStats } from '../domain/playerStats.js';
 import { renderPlayerAvatar } from '../ui/playerAvatar.js';
 import { renderPlayerPanel } from '../ui/playerPanel.js';
 import { loadSimulations, saveSimulations, createSimulation, duplicateSimulation } from '../storage/simulationStorage.js?v=20260924-1710';
-const CATALOG_URL='https://raw.githubusercontent.com/DemPago/fantacalcio-ai/main/knowledge_base/listoni/listone_mantra_2026_27.md';
-const GOALKEEPERS_URL='https://raw.githubusercontent.com/DemPago/fantacalcio-ai/main/knowledge_base/listoni/per_ruolo_mantra/mantra_ruolo_P.md';
-function catalogSlug(value){return String(value||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
-function parseMantraListMarkdown(markdown){const players=[];let roles=[];for(const rawLine of String(markdown||'').split(/\r?\n/)){const line=rawLine.trim();const heading=line.match(/^##\s+Ruolo:\s+(.+?)\s+\(/i);if(heading){roles=heading[1].split('/').map(x=>x.trim()).filter(Boolean);continue;}const prose=line.match(/^(.+?)\s+gioca nel\s+(.+?),\s+ruolo Mantra\s+(Por|P),\s+quotazione\s+(\d+)\s+crediti,\s+FVM\s+(\d+)\.?$/i);if(prose){const [,name,club,,quotationRaw,fvmRaw]=prose;players.push({catalogId:`${catalogSlug(club)}:${catalogSlug(name)}`,name:name.trim(),club:club.trim(),roles:['P'],quotation:Number(quotationRaw),fvm:Number(fvmRaw)});continue;}if(!line.startsWith('|')||/^\|\s*(Nome|[-:]+)/i.test(line))continue;const cells=line.split('|').slice(1,-1).map(x=>x.trim());if(cells.length<4||!roles.length)continue;const [name,club,quotationRaw,fvmRaw]=cells;if(!name||!club||!/^\d/.test(String(quotationRaw)))continue;players.push({catalogId:`${catalogSlug(club)}:${catalogSlug(name)}`,name,club,roles:[...roles],quotation:Number(quotationRaw),fvm:Number(fvmRaw)});}const unique=new Map();for(const player of players)unique.set(player.catalogId,player);return [...unique.values()].sort((a,b)=>a.name.localeCompare(b.name,'it'));}
-function filterCatalog(players,{search='',role='',club=''}={}){const needle=String(search).trim().toLocaleLowerCase('it');return players.filter(player=>(!needle||`${player.name} ${player.club}`.toLocaleLowerCase('it').includes(needle))&&(!role||player.roles.includes(role))&&(!club||player.club===club));}
-function playerToSquadDraft(player,purchasePrice){return {name:player.name,club:player.club,roles:[...player.roles],...(purchasePrice==null||purchasePrice===''?{}:{purchasePrice:Number(purchasePrice)})};}
-async function loadPlayerCatalog(){try{const [response,goalkeepersResponse]=await Promise.all([fetch(CATALOG_URL,{cache:'no-store'}),fetch(GOALKEEPERS_URL,{cache:'no-store'})]);if(!response.ok)throw new Error(`HTTP ${response.status}`);const merged=[...parseMantraListMarkdown(await response.text()),...(goalkeepersResponse.ok?parseMantraListMarkdown(await goalkeepersResponse.text()):[])];const unique=new Map();for(const player of merged)unique.set(player.catalogId,player);const players=[...unique.values()].sort((a,b)=>a.name.localeCompare(b.name,'it'));if(!players.length)throw new Error('Listone vuoto');return {players,error:null};}catch(error){return {players:[],error};}}
-
 const catalogStyle=document.createElement('style');
 catalogStyle.textContent=`.squad-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}.budget-card{margin-top:14px}.budget-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end}.budget-form label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px;font-weight:800}.budget-form input{width:100%;background:#07141e;color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;min-height:44px}.catalog-card{margin-top:14px}.catalog-filters{display:grid;grid-template-columns:2fr 1fr 1fr 1.35fr;gap:10px}.catalog-filters label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px;font-weight:800}.catalog-filters input,.catalog-filters select{width:100%;background:#07141e;color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;min-height:44px}.catalog-meta{color:var(--muted);font-size:12px;margin:12px 0}.catalog-results{display:grid;gap:8px}.catalog-player{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;background:#091923;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:11px 12px}.catalog-player-main{display:flex;flex-direction:column;min-width:0}.catalog-player-main strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.catalog-player-main span{font-size:12px;color:var(--muted)}.catalog-values{display:flex;gap:6px}.catalog-values span{font-size:11px;color:#b7d7c8;background:#102a20;border:1px solid #234c39;border-radius:999px;padding:5px 7px}.catalog-add{min-width:88px}.catalog-add:disabled{opacity:.55;cursor:default}.catalog-more{justify-self:center;margin-top:4px}.catalog-state{padding:28px;text-align:center;color:var(--muted)}.catalog-state.warning{color:#ffd56a}@media(max-width:700px){.squad-kpis{grid-template-columns:repeat(2,1fr)}.budget-form{grid-template-columns:1fr}.catalog-filters{grid-template-columns:1fr}.catalog-player{grid-template-columns:minmax(0,1fr) auto}.catalog-values{grid-column:1}.catalog-add{grid-column:2;grid-row:1 / span 2}.catalog-card .section-head{align-items:flex-start;flex-direction:column}.catalog-card .section-head .ghost-btn{width:100%}}`;
 document.head.appendChild(catalogStyle);
@@ -237,7 +229,7 @@ function bindEvents() {
   app.querySelectorAll('[data-edit-player]').forEach(btn=>btn.addEventListener('click',()=>{editingPlayerId=btn.dataset.editPlayer;render();}));
   app.querySelectorAll('[data-delete-player]').forEach(btn => btn.addEventListener('click', () => { const id=btn.dataset.deletePlayer; squad=squad.filter(p=>p.id!==id); if(editingPlayerId===id) editingPlayerId=null; Object.keys(lineup).forEach(k=>{if(lineup[k]===id) delete lineup[k]}); persist(); render(); }));
   app.querySelector('#export-squad')?.addEventListener('click', () => { const blob=new Blob([exportSquad(squad)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='mantra-lab-rosa.json'; a.click(); URL.revokeObjectURL(a.href); });
-  app.querySelector('#import-squad')?.addEventListener('change', async e => { const file=e.target.files?.[0]; if(!file)return; try{squad=importSquad(await file.text());persist();lineup={};render();}catch(err){alert(err.message);} });
+  app.querySelector('#import-squad')?.addEventListener('change', async e => { const file=e.target.files?.[0]; if(!file)return; try{squad=reconcileOfficialRoles(importSquad(await file.text()),playerCatalog);persist();lineup={};render();}catch(err){alert(err.message);} });
   app.querySelectorAll('[data-delete-real-player]').forEach(btn=>btn.addEventListener('click',()=>{const id=btn.dataset.deleteRealPlayer;const player=playerById(id);if(!player)return;if(!confirm(`Eliminare ${player.name} dalla rosa?`))return;const next=removePlayerEverywhere(squad,lineup,id);squad=next.players;lineup=next.lineup;if(editingPlayerId===id)editingPlayerId=null;pickerSlot=null;persist();render();}));
   app.querySelector('#sim-select')?.addEventListener('change',e=>{activeSimulationId=e.target.value;simPickerSlot=null;persistSimulations();render();});
   app.querySelector('#sim-new')?.addEventListener('click',()=>{const name=prompt('Nome della nuova simulazione',`Simulazione ${simulations.length+1}`);if(!name)return;const sim=createSimulation(name.trim()||`Simulazione ${simulations.length+1}`);simulations=[...simulations,sim];activeSimulationId=sim.id;persistSimulations();render();});
@@ -269,7 +261,12 @@ function bindEvents() {
 async function refreshPlayerCatalog() {
   playerCatalogLoading=true; playerCatalogError=null; render();
   const result=await loadPlayerCatalog();
-  playerCatalog=result.players; playerCatalogError=result.error; playerCatalogLoading=false; render();
+  if (!result.error) {
+    playerCatalog=result.players;
+    squad=reconcileOfficialRoles(squad,playerCatalog);
+    simulations=simulations.map(sim=>({...sim,players:reconcileOfficialRoles(sim.players,playerCatalog)}));
+  }
+  playerCatalogError=result.error; playerCatalogLoading=false; render();
 }
 
 async function refreshPlayerStats(){
