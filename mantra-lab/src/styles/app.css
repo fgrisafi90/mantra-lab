@@ -64,3 +64,12 @@ html{background:#061018}body{color:var(--text);background:radial-gradient(circle
 .comparison-table tr:last-child>*{border-bottom:0}
 .comparison-source{font-size:12px;line-height:1.6;color:var(--muted);margin:14px 0 0}
 @media(max-width:700px){.comparison-selectors{grid-template-columns:1fr}.comparison-card .section-head{align-items:flex-start;flex-direction:column;gap:12px}}
+
+.similar-trigger{margin:10px 0;font-size:12px;white-space:normal}
+.similar-players{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:14px;background:#091923}
+.similar-filter{display:flex;align-items:center;gap:10px;font-size:14px;min-height:44px}
+.similar-filter input{width:18px;height:18px;accent-color:#57e5ac}
+.similar-results{display:grid;gap:12px;margin-top:16px}
+.similar-result{padding:14px;border:1px solid var(--line);border-radius:12px}
+.similar-result p{font-size:13px;line-height:1.5;margin:8px 0}
+.similar-result strong{color:#9fefcc}

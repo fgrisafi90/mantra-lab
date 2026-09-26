@@ -11,9 +11,12 @@ import { upsertSquadPlayer } from '../domain/squadEditor.js';
 import { sortCatalog, filterCatalog, playerToSquadDraft, loadPlayerCatalog, reconcileOfficialRoles } from '../data/playerCatalog.js?v=20260925-official-v2';
 import { loadPlayerStats } from '../data/playerStatsData.js';
 import { buildPlayerStatsIndex, findPlayerStats } from '../domain/playerStats.js';
+import { findSimilarPlayers } from '../domain/similarPlayers.js';
+import { renderSimilarPlayers } from '../ui/similarPlayers.js';
+import { normalizeKey } from '../domain/playerStats.js';
 import { renderPlayerAvatar } from '../ui/playerAvatar.js';
-import { renderPlayerPanel } from '../ui/playerPanel.js';
-import { renderPlayerComparison } from '../ui/playerComparison.js?v=20260926-compare-v1';
+import { renderPlayerPanel } from '../ui/playerPanel.js?v=20260926-similar-v1';
+import { renderPlayerComparison } from '../ui/playerComparison.js?v=20260926-similar-v1';
 import { loadSimulations, saveSimulations, createSimulation, duplicateSimulation } from '../storage/simulationStorage.js?v=20260924-1710';
 const catalogStyle=document.createElement('style');
 catalogStyle.textContent=`.squad-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}.budget-card{margin-top:14px}.budget-form{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end}.budget-form label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px;font-weight:800}.budget-form input{width:100%;background:#07141e;color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;min-height:44px}.catalog-card{margin-top:14px}.catalog-filters{display:grid;grid-template-columns:2fr 1fr 1fr 1.35fr;gap:10px}.catalog-filters label{display:flex;flex-direction:column;gap:6px;color:var(--muted);font-size:12px;font-weight:800}.catalog-filters input,.catalog-filters select{width:100%;background:#07141e;color:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;font:inherit;min-height:44px}.catalog-meta{color:var(--muted);font-size:12px;margin:12px 0}.catalog-results{display:grid;gap:8px}.catalog-player{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;background:#091923;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:11px 12px}.catalog-player-main{display:flex;flex-direction:column;min-width:0}.catalog-player-main strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.catalog-player-main span{font-size:12px;color:var(--muted)}.catalog-values{display:flex;gap:6px}.catalog-values span{font-size:11px;color:#b7d7c8;background:#102a20;border:1px solid #234c39;border-radius:999px;padding:5px 7px}.catalog-add{min-width:88px}.catalog-add:disabled{opacity:.55;cursor:default}.catalog-more{justify-self:center;margin-top:4px}.catalog-state{padding:28px;text-align:center;color:var(--muted)}.catalog-state.warning{color:#ffd56a}@media(max-width:700px){.squad-kpis{grid-template-columns:repeat(2,1fr)}.budget-form{grid-template-columns:1fr}.catalog-filters{grid-template-columns:1fr}.catalog-player{grid-template-columns:minmax(0,1fr) auto}.catalog-values{grid-column:1}.catalog-add{grid-column:2;grid-row:1 / span 2}.catalog-card .section-head{align-items:flex-start;flex-direction:column}.catalog-card .section-head .ghost-btn{width:100%}}`;
@@ -51,6 +54,8 @@ let playerStatsIndex=buildPlayerStatsIndex(playerStatsDataset);
 let panelPlayer=null;
 let pendingCatalogPlayer=null;
 let comparisonIds=['','',''];
+let showSimilar=false;
+let cheaperSimilar=false;
 
 const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 const playerById = id => squad.find(p => p.id === id);
@@ -62,7 +67,14 @@ function resolvePlayerByUiId(id){
   for(const sim of simulations){const found=sim.players?.find(p=>p.id===id);if(found)return found;}
   return null;
 }
-function openPlayerPanel(player){if(!player)return;panelPlayer=player;render();}
+function officialPlayer(player){return playerCatalog.find(p=>p.catalogId===player?.catalogId || (normalizeKey(p.name)===normalizeKey(player?.name)&&normalizeKey(p.club)===normalizeKey(player?.club)));}
+function openPlayerPanel(player){if(!player)return;panelPlayer=player;showSimilar=false;cheaperSimilar=false;render();}
+function renderProfile(){
+  if(!panelPlayer)return '';
+  const official=officialPlayer(panelPlayer);
+  const content=showSimilar&&official?renderSimilarPlayers(official,findSimilarPlayers(official,playerCatalog,{cheaperOnly:cheaperSimilar,statsIndex:playerStatsIndex}),cheaperSimilar):'';
+  return renderPlayerPanel(panelPlayer,findPlayerStats(panelPlayer,playerStatsIndex),{similarId:official?.catalogId,similarContent:content});
+}
 function renderCatalogAddPanel(){
   if(!pendingCatalogPlayer)return '';
   const p=pendingCatalogPlayer;
@@ -198,11 +210,24 @@ function renderAsta() {
 
 function render() {
   const page = active==='formazione'?renderPitch():active==='rosa'?renderRosa():active==='simulatore'?renderSimulator():active==='asta'?renderAsta():renderGiornata();
-  app.innerHTML = shell(page) + (panelPlayer?renderPlayerPanel(panelPlayer,findPlayerStats(panelPlayer,playerStatsIndex)):'') + renderCatalogAddPanel();
+  app.innerHTML = shell(page) + renderProfile() + renderCatalogAddPanel();
   bindEvents();
 }
 
 function bindEvents() {
+  app.querySelectorAll('[data-find-similar]').forEach(button=>button.addEventListener('click',()=>{
+    panelPlayer=playerCatalog.find(p=>p.catalogId===button.dataset.findSimilar);
+    showSimilar=true;cheaperSimilar=false;render();
+    app.querySelector('#similar-cheaper')?.focus({preventScroll:true});
+  }));
+  app.querySelector('#similar-cheaper')?.addEventListener('change',e=>{cheaperSimilar=e.target.checked;render();app.querySelector('#similar-cheaper')?.focus({preventScroll:true});});
+  app.querySelectorAll('[data-compare-alternative]').forEach(button=>button.addEventListener('click',()=>{
+    const source=officialPlayer(panelPlayer);if(!source)return;
+    comparisonIds=[source.catalogId,button.dataset.compareAlternative,''];panelPlayer=null;
+    if(active!=='simulatore')active='rosa';render();
+    app.querySelector('.comparison-card')?.scrollIntoView({block:'start'});
+    app.querySelector('[data-compare-slot="0"]')?.focus({preventScroll:true});
+  }));
   app.querySelectorAll('[data-compare-slot]').forEach(select=>select.addEventListener('change',e=>{
     comparisonIds[Number(select.dataset.compareSlot)]=e.target.value;
     render();
