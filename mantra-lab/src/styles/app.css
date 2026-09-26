@@ -49,3 +49,18 @@ html{background:#061018}body{color:var(--text);background:radial-gradient(circle
 .player-history{margin-top:16px}.matchday-row{border:1px solid rgba(255,255,255,.08);border-radius:12px;background:#091923;margin:8px 0;overflow:hidden}.matchday-row summary{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;list-style:none;padding:12px;cursor:pointer}.matchday-row summary::-webkit-details-marker{display:none}.matchday-row summary span{color:var(--muted);font-size:13px}.matchday-row summary b{font-size:16px}.matchday-detail{display:flex;flex-wrap:wrap;gap:8px;padding:0 12px 12px;color:#c5d4dc;font-size:12px}.matchday-detail span{background:#10232e;border-radius:999px;padding:5px 8px}.player-panel__empty{text-align:center;padding:52px 16px;color:var(--muted)}.player-panel__empty strong{display:block;color:#fff;font-size:18px;margin-bottom:7px}
 .catalog-add-dialog label{display:flex;flex-direction:column;gap:7px;color:var(--muted);font-size:12px;font-weight:800;margin:12px 0}.catalog-add-dialog input{width:100%;background:#07141e;color:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit}
 @media(max-width:700px){.catalog-player{grid-template-columns:auto minmax(0,1fr) auto}.catalog-values{grid-column:2}.catalog-add{grid-column:3;grid-row:1 / span 2}.player-panel{width:100%;border-left:0}.player-panel__header{padding-top:26px}.player-stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Player comparison: local catalog and available season statistics. */
+.comparison-card{margin-top:16px;min-width:0}
+.comparison-selectors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:16px 0}
+.comparison-selectors label{display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--muted)}
+.comparison-selectors select{width:100%;min-width:0;min-height:44px;background:#07141e;color:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit}
+.comparison-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.comparison-table{width:100%;border-collapse:collapse;text-align:left;font-size:13px}
+.comparison-table caption{text-align:left;padding:12px;color:var(--muted)}
+.comparison-table th,.comparison-table td{padding:12px;min-width:125px;border-bottom:1px solid var(--line);vertical-align:top}
+.comparison-table thead th{background:#102a20;color:#b7d7c8}
+.comparison-table tbody th{font-weight:500;color:var(--muted)}
+.comparison-table tr:last-child>*{border-bottom:0}
+.comparison-source{font-size:12px;line-height:1.6;color:var(--muted);margin:14px 0 0}
+@media(max-width:700px){.comparison-selectors{grid-template-columns:1fr}.comparison-card .section-head{align-items:flex-start;flex-direction:column;gap:12px}}
