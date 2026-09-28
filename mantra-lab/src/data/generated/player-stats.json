@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T14:33:50.232Z",
+  "generatedAt": "2026-09-28T15:33:16.177Z",
   "season": "2026/2027",
   "players": [
     {
@@ -12543,6 +12543,27 @@
       "sourceId": null,
       "name": "Alaba",
       "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 0,
+        "ratedMatches": 0,
+        "averageRating": 0,
+        "fantasyAverage": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Neto",
+      "club": "JUV",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
