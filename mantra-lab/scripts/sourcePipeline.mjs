@@ -1,4 +1,4 @@
-import { selectActiveMatchday } from './sources/scheduleSource.mjs';
+import { selectUpcomingMatchday } from './sources/scheduleSource.mjs';
 import { deriveSignals } from './sources/playerStatsSource.mjs';
 import { applyLineupSignals } from './sources/lineupSource.mjs';
 
@@ -7,7 +7,7 @@ function standingRank(standings, teamId) {
 }
 
 export async function buildMatchdayDataset({ context, players, generatedAt = new Date().toISOString(), lineupFetcher }) {
-  const matchday = selectActiveMatchday(context.fixtures, generatedAt);
+  const matchday = selectUpcomingMatchday(context.fixtures, generatedAt);
   if (!matchday) throw new Error('Nessuna giornata Serie A attiva trovata');
   const fixtures = context.fixtures.filter(f => f.matchday === matchday);
   const lineupPlayers = {};
@@ -39,6 +39,8 @@ export async function buildMatchdayDataset({ context, players, generatedAt = new
       name: player.name,
       club: player.club,
       teamId: player.teamId,
+      fixtureId: fixture?.id ?? null,
+      sampleGames: player.games,
       signals
     };
   });

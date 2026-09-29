@@ -1,6 +1,6 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { shouldRefreshMatchday } from './scheduleLogic.mjs';
-import { fetchSerieASchedule, selectActiveMatchday } from './sources/scheduleSource.mjs';
+import { fetchSerieASchedule, selectUpcomingMatchday } from './sources/scheduleSource.mjs';
 import { fetchPlayerStats } from './sources/playerStatsSource.mjs';
 import { fetchMatchLineup } from './sources/lineupSource.mjs';
 import { buildMatchdayDataset } from './sourcePipeline.mjs';
@@ -18,13 +18,13 @@ try {
   process.exit(0);
 }
 
-const matchday=selectActiveMatchday(context.fixtures, now);
+const matchday=selectUpcomingMatchday(context.fixtures, now);
 if (!matchday) {
   console.log('No active Serie A matchday found.');
   process.exit(0);
 }
 const fixtures=context.fixtures.filter(f=>f.matchday===matchday);
-const refresh=force || shouldRefreshMatchday({now,fixtures,lastRefreshAt:current.generatedAt});
+const refresh=force || current.matchday!==matchday || !Number.isFinite(Date.parse(current.generatedAt)) || Date.parse(now)-Date.parse(current.generatedAt)>=24*3600_000 || shouldRefreshMatchday({now,fixtures,lastRefreshAt:current.generatedAt});
 if(!refresh){ console.log('No matchday refresh required today.'); process.exit(0); }
 
 let dataset;
@@ -37,9 +37,9 @@ try {
     lineupFetcher: args => fetchMatchLineup(args)
   });
 } catch (error) {
-  console.error(`Player source degraded; keeping previous player signals: ${error.message}`);
+  console.error(`Player source degraded; player signals unavailable: ${error.message}`);
   dataset={
-    ...current,
+    players: [],
     generatedAt:now,
     season:context.seasonName,
     matchday,

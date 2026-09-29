@@ -1,3 +1,6 @@
+import { playerTier, updatePreference } from '../domain/playerTiers.js';
+import { loadPlayerPreferences, savePlayerPreferences } from '../storage/playerPreferences.js';
+import { renderPlayerTiers } from '../ui/playerTiers.js';
 import { NAV_ITEMS } from './navigation.js?v=20260924-1710';
 import { FORMATIONS, getFormation } from '../domain/formations.js';
 import { eligiblePlayersForSlot, setLineupPlayer } from '../domain/pitchModel.js';
@@ -6,7 +9,8 @@ import { analyzeSquadCoverage } from '../domain/squadCoverage.js';
 import { loadSquad, saveSquad, loadBudget, saveBudget, summarizeBudget } from '../storage/squadStorage.js';
 import { exportSquad, importSquad } from '../storage/transfer.js';
 import { loadPublicData, isDatasetStale, resolveMatchdayDataUrl } from '../data/publicData.js';
-import { recommendLineups } from '../domain/recommendation.js';
+import { assessSquad, safeRecommendations } from '../domain/schierabilita.js';
+import { renderSchierabilita } from '../ui/schierabilita.js';
 import { upsertSquadPlayer } from '../domain/squadEditor.js';
 import { sortCatalog, filterCatalog, playerToSquadDraft, loadPlayerCatalog, reconcileOfficialRoles } from '../data/playerCatalog.js?v=20260925-official-v2';
 import { loadPlayerStats } from '../data/playerStatsData.js';
@@ -44,6 +48,10 @@ let simulations = loadSimulations();
 if (!simulations.length) simulations = [createSimulation('Simulazione 1')];
 let activeSimulationId = localStorage.getItem('mantra-lab:active-simulation') || simulations[0].id;
 let simPickerSlot = null;
+let simulationTab = 'squad';
+let tierSearch = '', tierRole = '', tierFilter = '';
+let tierLimit = 40;
+let playerPreferences = loadPlayerPreferences();
 let simCatalogSearch = '';
 let simCatalogRole = '';
 let simCatalogClub = '';
@@ -111,14 +119,14 @@ function hero(kicker,title,subtitle,action='') {
 }
 
 function renderGiornata() {
-  const recommendations = publicDataset ? recommendLineups(squad, publicDataset) : [];
+  const recommendations = publicDataset ? safeRecommendations(squad, publicDataset) : [];
   const best = recommendations[0];
   const stale = publicDataset ? isDatasetStale(publicDataset) : false;
   const updated = publicDataset?.generatedAt ? new Date(publicDataset.generatedAt).toLocaleString('it-IT',{dateStyle:'short',timeStyle:'short'}) : '—';
-  const dataState = publicDataLoading ? 'Caricamento…' : publicDataError ? 'Non disponibili' : stale ? 'Da aggiornare' : 'Aggiornati';
-  const analysis = best ? `<section class="recommendation card"><div class="section-head"><div><span class="eyebrow">FORMAZIONE CONSIGLIATA</span><h3>${best.formationId} · ${best.normalizedScore}/100</h3></div><button class="primary-btn" data-use-recommendation="0">Apri formazione</button></div><div class="reason-list">${best.explanation.map(x=>`<p>✓ ${escapeHtml(x)}</p>`).join('')}</div>${recommendations.length>1?`<div class="alternatives"><strong>Alternative</strong>${recommendations.slice(1,3).map((r,i)=>`<button class="ghost-btn" data-use-recommendation="${i+1}">${r.formationId} · ${r.normalizedScore}/100</button>`).join('')}</div>`:''}</section>` : `<section class="card compact"><span class="eyebrow">ANALISI GIORNATA</span><h3>${squad.length<11?'Completa prima la rosa':'Nessuna formazione calcolabile'}</h3><p class="muted">${publicDataError?'I dati esterni non sono raggiungibili al momento.':publicDataset?.players?.length?'La rosa non ha ancora abbastanza giocatori compatibili con segnali disponibili.':'Il dataset della giornata non contiene ancora i segnali giocatore. Verrà popolato dal prossimo aggiornamento automatico.'}</p></section>`;
+  const dataState = publicDataLoading ? 'Caricamento…' : publicDataError ? 'Non disponibili' : stale ? 'Da aggiornare' : publicDataset?.players?.length ? 'Aggiornati' : 'Incompleti';
+  const analysis = best ? `<section class="recommendation card"><div class="section-head"><div><span class="eyebrow">FORMAZIONE CONSIGLIATA</span><h3>${best.formationId} · ${best.normalizedScore}/100</h3></div><button class="primary-btn" data-use-recommendation="0">Apri formazione</button></div><div class="reason-list">${best.explanation.map(x=>`<p>✓ ${escapeHtml(x)}</p>`).join('')}</div>${recommendations.length>1?`<div class="alternatives"><strong>Alternative</strong>${recommendations.slice(1,3).map((r,i)=>`<button class="ghost-btn" data-use-recommendation="${i+1}">${r.formationId} · ${r.normalizedScore}/100</button>`).join('')}</div>`:''}</section>` : `<section class="card compact"><span class="eyebrow">ANALISI GIORNATA</span><h3>${squad.length<11?'Completa prima la rosa':'Nessuna formazione calcolabile'}</h3><p class="muted">${stale?'I dati sono troppo vecchi: aggiorna le fonti prima di calcolare la formazione.':publicDataError?'I dati esterni non sono raggiungibili al momento.':publicDataset?.players?.length?'La rosa non ha ancora abbastanza giocatori compatibili con segnali disponibili.':'Il dataset della giornata non contiene ancora i segnali giocatore. Verrà popolato dal prossimo aggiornamento automatico.'}</p></section>`;
   return hero('GIORNATA', publicDataset?.matchday ? `Giornata ${publicDataset.matchday}` : 'La mia giornata','Analisi esterna, compatibilità Mantra e miglior formazione spiegata.', `<a class="primary-btn" id="refresh-public-data" href="https://github.com/fgrisafi90/mantra-lab/actions/workflows/update-data.yml" rel="noopener">Aggiorna dati</a>`) +
-    `<section class="dashboard-grid"><article class="stat-card"><span>Rosa</span><strong>${squad.length}</strong><small>giocatori salvati</small></article><article class="stat-card"><span>Dati giornata</span><strong>${dataState}</strong><small>ultimo: ${escapeHtml(updated)}</small></article><article class="stat-card accent"><span>Moduli validi</span><strong>${recommendations.length}</strong><small>analizzati automaticamente</small></article></section>` + analysis;
+    `<section class="dashboard-grid"><article class="stat-card"><span>Rosa</span><strong>${squad.length}</strong><small>giocatori salvati</small></article><article class="stat-card"><span>Dati giornata</span><strong>${dataState}</strong><small>ultimo: ${escapeHtml(updated)}</small></article><article class="stat-card accent"><span>Moduli validi</span><strong>${recommendations.length}</strong><small>analizzati automaticamente</small></article></section>` + renderSchierabilita(assessSquad(squad, publicDataset), publicDataset?.matchday) + analysis;
 }
 
 function renderPitch() {
@@ -177,6 +185,8 @@ function renderRosa() {
 function renderSimulator() {
   const sim=currentSimulation();
   if (!sim) return hero('SIMULATORE D’ASTA','Nessuna simulazione','Crea una simulazione per iniziare.');
+  const tabs=`<div class="simulation-tabs" aria-label="Sezioni simulazione"><button class="${simulationTab==='squad'?'primary-btn':'ghost-btn'}" data-simulation-tab="squad" aria-pressed="${simulationTab==='squad'}">Rosa e listone</button><button class="${simulationTab==='tiers'?'primary-btn':'ghost-btn'}" data-simulation-tab="tiers" aria-pressed="${simulationTab==='tiers'}">Fasce giocatori</button></div>`;
+  if(simulationTab==='tiers')return tabs + `<p class="muted">Simulazione attiva: <strong>${escapeHtml(sim.name)}</strong> · ${sim.players.length} giocatori</p>` + renderPlayerTiers(playerCatalog,playerPreferences,{search:tierSearch,role:tierRole,tier:tierFilter,limit:tierLimit,budget:budget??500,players:sim.players,loading:playerCatalogLoading,error:playerCatalogError});
   const formation=getFormation(sim.formationId);
   const clubs=[...new Set(playerCatalog.map(p=>p.club))].sort((a,b)=>a.localeCompare(b,'it'));
   const filtered=sortCatalog(filterCatalog(playerCatalog,{search:simCatalogSearch,role:simCatalogRole,club:simCatalogClub}),simCatalogSort);
@@ -185,7 +195,7 @@ function renderSimulator() {
   const spent=sim.players.reduce((sum,p)=>sum+(Number.isFinite(Number(p.purchasePrice))?Number(p.purchasePrice):0),0);
   const options=simulations.map(item=>`<option value="${item.id}" ${item.id===activeSimulationId?'selected':''}>${escapeHtml(item.name)}</option>`).join('');
   const catalogState=playerCatalogLoading ? '<div class="catalog-state">Caricamento listone Mantra…</div>' : playerCatalogError ? '<div class="catalog-state warning">Listone non disponibile.</div>' : `<div class="catalog-results">${visible.map(p=>{const owned=inSim.has(`${p.club.toLowerCase()}::${p.name.toLowerCase()}`);return `<article class="catalog-player">${renderPlayerAvatar({name:p.name,avatarUrl:findPlayerStats(p,playerStatsIndex)?.avatarUrl,size:'sm'})}<button class="catalog-player-main player-profile-trigger" type="button" data-player-profile="${escapeHtml(p.catalogId)}"><strong>${escapeHtml(p.name)}</strong><span>${escapeHtml(p.club)} · ${escapeHtml(p.roles.join('/'))}</span></button><div class="catalog-values"><span>Q ${p.quotation}</span><span>FVM ${p.fvm}</span></div><button class="${owned?'ghost-btn':'primary-btn'} catalog-add" data-sim-add-catalog="${escapeHtml(p.catalogId)}" ${owned?'disabled':''}>${owned?'Inserito':'Aggiungi'}</button></article>`;}).join('')||'<div class="empty-inline">Nessun giocatore trovato.</div>'}${filtered.length>visible.length?`<button class="ghost-btn catalog-more" id="sim-catalog-more">Mostra altri ${Math.min(40,filtered.length-visible.length)}</button>`:''}</div>`;
-  return `${hero('SIMULATORE D’ASTA','Prova la tua rosa','Crea la rosa demo, schiera i giocatori e ritrova tutto come lo hai lasciato. Salvataggio automatico attivo.')}
+  return `${tabs}${hero('SIMULATORE D’ASTA','Prova la tua rosa','Crea la rosa demo, schiera i giocatori e ritrova tutto come lo hai lasciato. Salvataggio automatico attivo.')}
   <section class="card"><div class="section-head"><div><span class="eyebrow">SIMULAZIONI SALVATE</span><h3>${escapeHtml(sim.name)}</h3></div><div class="inline-actions"><button class="primary-btn" id="sim-new">Nuova</button><button class="ghost-btn" id="sim-duplicate">Duplica</button><button class="ghost-btn" id="sim-save">Salva</button><button class="icon-btn" id="sim-delete" aria-label="Elimina simulazione">×</button></div></div><label>Simulazione<select id="sim-select">${options}</select></label></section>
   <section class="squad-kpis"><article class="stat-card"><span>Giocatori</span><strong>${sim.players.length}</strong><small>nella prova</small></article><article class="stat-card"><span>Spesa</span><strong>${spent}</strong><small>crediti inseriti</small></article><article class="stat-card accent"><span>Modulo</span><strong>${escapeHtml(sim.formationId)}</strong><small>formazione demo</small></article></section>
   <section class="toolbar card"><label>Modulo <select id="sim-formation-select">${FORMATIONS.map(f=>`<option value="${f.id}" ${f.id===sim.formationId?'selected':''}>${f.name}</option>`).join('')}</select></label><button class="ghost-btn" id="sim-clear-lineup">Svuota campo</button><button class="ghost-btn" id="sim-clear-squad">Svuota rosa demo</button></section>
@@ -215,6 +225,23 @@ function render() {
 }
 
 function bindEvents() {
+  app.querySelectorAll('[data-simulation-tab]').forEach(button=>button.addEventListener('click',()=>{simulationTab=button.dataset.simulationTab;render();}));
+  app.querySelector('#tier-search')?.addEventListener('input',e=>{tierSearch=e.target.value;tierLimit=40;render();const input=app.querySelector('#tier-search');input?.focus();input?.setSelectionRange(tierSearch.length,tierSearch.length);});
+  app.querySelector('#tier-role')?.addEventListener('change',e=>{tierRole=e.target.value;tierLimit=40;render();});
+  app.querySelector('#tier-filter')?.addEventListener('change',e=>{tierFilter=e.target.value;tierLimit=40;render();});
+  app.querySelectorAll('[data-tier-filter]').forEach(button=>button.addEventListener('click',()=>{tierFilter=tierFilter===button.dataset.tierFilter?'':button.dataset.tierFilter;tierLimit=40;render();}));
+  app.querySelector('#tier-more')?.addEventListener('click',()=>{tierLimit+=40;render();});
+  const savePreference=(id,patch,refresh=true)=>{const player=playerCatalog.find(p=>p.catalogId===id);if(!player)return;try{const next=updatePreference(playerPreferences,player,patch);savePlayerPreferences(next);playerPreferences=next;if(refresh)render();return true;}catch(error){alert(error.message||'Impossibile salvare le preferenze.');render();}};
+  app.querySelectorAll('[data-tier-player]').forEach(select=>select.addEventListener('change',()=>savePreference(select.dataset.tierPlayer,{tier:select.value})));
+  app.querySelectorAll('[data-tier-cap]').forEach(input=>input.addEventListener('change',()=>{const empty=input.value.trim()==='';if(savePreference(input.dataset.tierCap,{cap:empty?null:Number(input.value)},false)){input.parentElement.firstChild.textContent=empty?'Tetto suggerito':'Tetto personale';if(empty){const player=playerCatalog.find(p=>p.catalogId===input.dataset.tierCap);input.value=playerTier(player,playerPreferences,budget??500).cap;}}}));
+  app.querySelectorAll('[data-tier-reset]').forEach(button=>button.addEventListener('click',()=>savePreference(button.dataset.tierReset,{tier:null,cap:null})));
+  app.querySelectorAll('[data-sim-add-tier]').forEach(button=>button.addEventListener('click',()=>{
+    const source=playerCatalog.find(p=>p.catalogId===button.dataset.simAddTier);if(!source)return;
+    const sim=currentSimulation();if(sim.players.some(p=>p.name.toLowerCase()===source.name.toLowerCase()&&p.club.toLowerCase()===source.club.toLowerCase()))return;
+    const cap=playerTier(source,playerPreferences,budget??500).cap;
+    const players=upsertSquadPlayer(sim.players,playerToSquadDraft(source,cap));
+    try{replaceCurrentSimulation({...sim,players});render();}catch{alert('Impossibile salvare la simulazione.');}
+  }));
   app.querySelectorAll('[data-find-similar]').forEach(button=>button.addEventListener('click',()=>{
     panelPlayer=playerCatalog.find(p=>p.catalogId===button.dataset.findSimilar);
     showSimilar=true;cheaperSimilar=false;render();
@@ -286,7 +313,7 @@ function bindEvents() {
   app.querySelector('#sim-catalog-more')?.addEventListener('click',()=>{simCatalogLimit+=40;render();});
   app.querySelectorAll('[data-sim-add-catalog]').forEach(btn=>btn.addEventListener('click',()=>{const source=playerCatalog.find(p=>p.catalogId===btn.dataset.simAddCatalog);if(!source)return;const sim=currentSimulation();if(sim.players.some(p=>p.name.toLowerCase()===source.name.toLowerCase()&&p.club.toLowerCase()===source.club.toLowerCase()))return;const players=upsertSquadPlayer(sim.players,playerToSquadDraft(source));replaceCurrentSimulation({...sim,players});render();}));
   app.querySelectorAll('[data-use-recommendation]').forEach(btn => btn.addEventListener('click', () => {
-    const recommendations = publicDataset ? recommendLineups(squad, publicDataset) : [];
+    const recommendations = publicDataset ? safeRecommendations(squad, publicDataset) : [];
     const selected = recommendations[Number(btn.dataset.useRecommendation)];
     if (!selected) return;
     formationId=selected.formationId; lineup={...selected.assignments}; localStorage.setItem('mantra-lab:formation',formationId); active='formazione'; render();

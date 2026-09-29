@@ -7,7 +7,7 @@ const statMap = stats => Object.fromEntries((stats || []).map(s => [String(s.sta
 const teamName = t => t?.mediaName || t?.officialName || t?.shortName || t?.name || '';
 
 export async function fetchJson(url, fetchImpl = fetch) {
-  const res = await fetchImpl(url, { headers });
+  const res = await fetchImpl(url, { headers, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`Lega Serie A HTTP ${res.status}`);
   return res.json();
 }
@@ -23,7 +23,7 @@ export async function resolveSeasonId({ seasonName, fetchImpl = fetch } = {}) {
   const target = seasonName || seasonNameForDate();
   const data = await fetchJson(`${LEGA_BASE}/competitions/${SERIE_A_COMPETITION_ID}/seasons?locale=en-GB`, fetchImpl);
   const seasons = data.seasons || [];
-  const season = seasons.find(s => s.seasonName === target) || seasons.at(-1);
+  const season = seasons.find(s => s.seasonName === target);
   if (!season?.seasonId) throw new Error('Stagione Serie A non trovata');
   return { seasonId: season.seasonId, seasonName: season.seasonName };
 }
@@ -134,4 +134,9 @@ export async function fetchSerieASchedule({ seasonName, fetchImpl = fetch } = {}
     fixtures: normalizeMatches(matchesData.matches || []),
     standings: normalizeStandings(standingsData.standings?.[0]?.teams || [])
   };
+}
+
+export function selectUpcomingMatchday(fixtures=[],now=new Date().toISOString()) {
+ const pending=fixtures.filter(f=>!f.played && Date.parse(f.kickoff)>Date.parse(now)).sort((a,b)=>Date.parse(a.kickoff)-Date.parse(b.kickoff));
+ return pending[0]?.matchday ?? selectActiveMatchday(fixtures,now);
 }

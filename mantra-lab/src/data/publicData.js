@@ -11,7 +11,7 @@ export function parseMatchdayDataset(value) {
 
 export function isDatasetStale(dataset, now = new Date().toISOString(), maxAgeHours = 36) {
   const age = new Date(now).getTime() - new Date(dataset.generatedAt).getTime();
-  return !Number.isFinite(age) || age > maxAgeHours * 3600_000;
+  return !Number.isFinite(age) || age < 0 || age > maxAgeHours * 3600_000;
 }
 
 const norm = text => String(text ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
