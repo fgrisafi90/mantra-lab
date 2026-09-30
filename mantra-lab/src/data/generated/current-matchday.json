@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T14:24:18.810Z",
+  "generatedAt": "2026-09-30T14:43:55.763Z",
   "season": "2026/2027",
   "matchday": 6,
   "fixtures": [
@@ -741,16 +741,16 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 78,
-        "bonusPotential": 49.19587628865979,
+        "bonusPotential": 49.765625,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 42.79381443298969,
+        "tacticalOpportunity": 42.875,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -761,16 +761,16 @@
       "club": "Monza",
       "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
       "fixtureId": "serie-a::Football_Match::4a20f98fd3354844a243771b3f76c48a",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 49.2,
-        "bonusPotential": 47.06382978723404,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.43404255319149,
+        "tacticalOpportunity": 43.353591160220994,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -781,16 +781,16 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 4,
+      "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 100,
+        "expectedMinutes": 84.44444444444444,
         "recentForm": 50,
         "opponentContext": 78,
-        "bonusPotential": 58.048780487804876,
+        "bonusPotential": 98,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 39.09756097560975,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -801,10 +801,10 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 3,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 86.2962962962963,
+        "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 75.6,
         "bonusPotential": 35,
@@ -841,7 +841,7 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 4,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
@@ -850,7 +850,7 @@
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 36.913924050632914,
+        "tacticalOpportunity": 38.79899497487437,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -861,16 +861,16 @@
       "club": "Monza",
       "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
       "fixtureId": "serie-a::Football_Match::4a20f98fd3354844a243771b3f76c48a",
-      "sampleGames": 4,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 98.88888888888889,
+        "expectedMinutes": 99.44444444444444,
         "recentForm": 50,
         "opponentContext": 49.2,
-        "bonusPotential": 80.50561797752809,
+        "bonusPotential": 80.2513966480447,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 45.61797752808989,
+        "tacticalOpportunity": 43.44692737430167,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -881,16 +881,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 75.6,
-        "bonusPotential": 58.66883116883117,
+        "bonusPotential": 91.65803108808291,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 43.18181818181818,
+        "tacticalOpportunity": 46.751295336787564,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -901,16 +901,16 @@
       "club": "Monza",
       "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
       "fixtureId": "serie-a::Football_Match::4a20f98fd3354844a243771b3f76c48a",
-      "sampleGames": 3,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 71.11111111111111,
+        "expectedMinutes": 84.44444444444444,
         "recentForm": 50,
         "opponentContext": 49.2,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 38.9375,
+        "tacticalOpportunity": 39.973684210526315,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -921,16 +921,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 75.6,
-        "bonusPotential": 58.72017353579176,
+        "bonusPotential": 72.82967032967034,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 43.199566160520604,
+        "tacticalOpportunity": 43.30769230769231,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -941,16 +941,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 75.6,
-        "bonusPotential": 43.33333333333333,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 38.111111111111114,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -961,16 +961,16 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 44.4,
-        "bonusPotential": 43.282208588957054,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 38.0920245398773,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -981,16 +981,16 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 98.44444444444443,
+        "expectedMinutes": 85.55555555555556,
         "recentForm": 50,
         "opponentContext": 44.4,
-        "bonusPotential": 41.39954853273137,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 40.1196388261851,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1001,7 +1001,7 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 4,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
         "expectedMinutes": 100,
@@ -1021,10 +1021,10 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 91.11111111111111,
+        "expectedMinutes": 67.22222222222223,
         "recentForm": 50,
         "opponentContext": 75.6,
         "bonusPotential": 35,
@@ -1041,10 +1041,10 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 73.55555555555556,
+        "expectedMinutes": 66.66666666666666,
         "recentForm": 50,
         "opponentContext": 44.4,
         "bonusPotential": 35,
@@ -1061,16 +1061,16 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 80.22222222222223,
+        "expectedMinutes": 66.66666666666666,
         "recentForm": 50,
         "opponentContext": 44.4,
-        "bonusPotential": 65.29085872576178,
+        "bonusPotential": 58.625,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 41.282548476454295,
+        "tacticalOpportunity": 41.3,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1081,10 +1081,10 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 4,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 54.44444444444444,
+        "expectedMinutes": 59.44444444444444,
         "recentForm": 50,
         "opponentContext": 78,
         "bonusPotential": 35,
@@ -1101,16 +1101,16 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 4,
+      "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 23.88888888888889,
+        "expectedMinutes": 44.44444444444444,
         "recentForm": 50,
         "opponentContext": 78,
-        "bonusPotential": 80,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 51.8,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1121,16 +1121,16 @@
       "club": "Monza",
       "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
       "fixtureId": "serie-a::Football_Match::4a20f98fd3354844a243771b3f76c48a",
-      "sampleGames": 4,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 58.333333333333336,
+        "expectedMinutes": 66.11111111111111,
         "recentForm": 50,
         "opponentContext": 49.2,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 38.6,
+        "tacticalOpportunity": 41.35294117647059,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1161,10 +1161,10 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 3,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 40.370370370370374,
+        "expectedMinutes": 25.555555555555554,
         "recentForm": 50,
         "opponentContext": 78,
         "bonusPotential": 35,
@@ -1181,16 +1181,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 5,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 61.55555555555555,
+        "expectedMinutes": 31.666666666666664,
         "recentForm": 50,
         "opponentContext": 75.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 37.729241877256314,
+        "tacticalOpportunity": 43.4,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1201,10 +1201,10 @@
       "club": "Monza",
       "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
       "fixtureId": "serie-a::Football_Match::4a20f98fd3354844a243771b3f76c48a",
-      "sampleGames": 4,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 31.11111111111111,
+        "expectedMinutes": 17.77777777777778,
         "recentForm": 50,
         "opponentContext": 49.2,
         "bonusPotential": 35,
@@ -1221,16 +1221,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::04392cf2fc314d4ba23420af6f006d3d",
-      "sampleGames": 4,
+      "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 31.38888888888889,
+        "expectedMinutes": 27.77777777777778,
         "recentForm": 50,
         "opponentContext": 75.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.690265486725664,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1241,10 +1241,10 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 3,
+      "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 49.25925925925927,
+        "expectedMinutes": 56.666666666666664,
         "recentForm": 50,
         "opponentContext": 78,
         "bonusPotential": 35,
@@ -1261,10 +1261,10 @@
       "club": "Como",
       "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
       "fixtureId": "serie-a::Football_Match::676dbc452fc9425589a666e21bad2171",
-      "sampleGames": 2,
+      "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 18.88888888888889,
+        "expectedMinutes": 27.77777777777778,
         "recentForm": 50,
         "opponentContext": 44.4,
         "bonusPotential": 35,
@@ -1281,10 +1281,10 @@
       "club": "Internazionale",
       "teamId": "serie-a::Football_Team::b7421caff23448c49134fa4f9095ee09",
       "fixtureId": "serie-a::Football_Match::5717f0a0aa8249228be29e58f744baea",
-      "sampleGames": 2,
+      "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 13.333333333333334,
+        "expectedMinutes": 12.222222222222221,
         "recentForm": 50,
         "opponentContext": 78,
         "bonusPotential": 35,
@@ -1301,16 +1301,16 @@
       "club": "Monza",
       "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
       "fixtureId": "serie-a::Football_Match::4a20f98fd3354844a243771b3f76c48a",
-      "sampleGames": 4,
+      "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 68.05555555555556,
+        "expectedMinutes": 12.222222222222221,
         "recentForm": 50,
         "opponentContext": 49.2,
-        "bonusPotential": 51.53061224489796,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 47.34285714285714,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1324,7 +1324,7 @@
       "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 22.22222222222222,
+        "expectedMinutes": 20.555555555555554,
         "recentForm": 50,
         "opponentContext": 49.2,
         "bonusPotential": 35,
@@ -9100,13 +9100,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-09-29T14:24:18.810Z",
+      "retrievedAt": "2026-09-30T14:43:55.763Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-09-29T14:24:18.810Z",
+      "retrievedAt": "2026-09-30T14:43:55.763Z",
       "status": "not-yet-available"
     }
   ]
