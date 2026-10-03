@@ -15,7 +15,9 @@ export function getFormation(id){return FORMATIONS.find(f=>f.id===id)??FORMATION
 
 export const DEFAULT_FORMATION_ID = '4-2-3-1';
 export function ensureDefaultFormation(storage=globalThis.localStorage){
-  if(storage?.getItem && storage?.setItem && !storage.getItem('mantra-lab:formation')) storage.setItem('mantra-lab:formation',DEFAULT_FORMATION_ID);
-  return storage?.getItem?.('mantra-lab:formation') || DEFAULT_FORMATION_ID;
+  if(!storage?.getItem || !storage?.setItem) return DEFAULT_FORMATION_ID;
+  const current=storage.getItem('mantra-lab:formation');
+  if(!current || current==='3-4-1-2') storage.setItem('mantra-lab:formation',DEFAULT_FORMATION_ID);
+  return storage.getItem('mantra-lab:formation') || DEFAULT_FORMATION_ID;
 }
 if(typeof globalThis.localStorage !== 'undefined') ensureDefaultFormation(globalThis.localStorage);
