@@ -35,3 +35,12 @@ test('legacy default 3-4-1-2 migrates once to the new 4-2-3-1 default',()=>{
   ensureDefaultFormation(storage);
   assert.equal(values.get('mantra-lab:formation'),'4-2-3-1');
 });
+
+test('legacy-default migration runs only once and later preserves an explicit 3-4-1-2 choice',()=>{
+  const values=new Map([['mantra-lab:formation','3-4-1-2']]);
+  const storage={getItem:key=>values.get(key)??null,setItem:(key,value)=>values.set(key,value)};
+  ensureDefaultFormation(storage);
+  values.set('mantra-lab:formation','3-4-1-2');
+  ensureDefaultFormation(storage);
+  assert.equal(values.get('mantra-lab:formation'),'3-4-1-2');
+});
