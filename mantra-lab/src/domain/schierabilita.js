@@ -2,6 +2,7 @@ import { isDatasetStale } from '../data/publicData.js';
 import { scorePlayer } from './matchdayScore.js';
 import { optimizeFormations } from './optimizer.js';
 import { FORMATIONS } from './formations.js';
+import { canPlaySlot } from './compatibility.js';
 import { buildPlayerStatsIndex, findPlayerStats } from './playerStats.js';
 import { deriveStatSignals, combineConfidence } from './schierabilitaSignals.js';
 
@@ -62,7 +63,31 @@ export function assessSquad(squad,dataset,now=new Date().toISOString(),statsData
   }).sort((a,b)=>(b.score??-1)-(a.score??-1)||a.player.name.localeCompare(b.player.name,'it'));
 }
 
-export function safeRecommendations(squad,dataset,now=new Date().toISOString(),statsDataset=null){
-  const scored=assessSquad(squad,dataset,now,statsDataset).filter(row=>row.score!==null).map(row=>({player:row.player,matchday:row}));
-  return scored.length?optimizeFormations(scored,FORMATIONS):[];
+function preferredFormationIssue(squad,assessed,preferredFormationId){
+  const formation=FORMATIONS.find(f=>f.id===preferredFormationId);
+  if(!formation)return {formationId:preferredFormationId,reasons:['Modulo preferito non riconosciuto']};
+  const validPlayers=assessed.filter(row=>row.score!==null&&!row.excluded).map(row=>row.player);
+  const reasons=[];
+  for(const slot of formation.slots){
+    const compatible=squad.filter(player=>canPlaySlot(player,slot));
+    if(!compatible.length){reasons.push(`${slot.label}: nessun giocatore compatibile`);continue;}
+    if(!validPlayers.some(player=>canPlaySlot(player,slot)))reasons.push(`${slot.label}: giocatori compatibili senza score valido`);
+  }
+  if(!reasons.length)reasons.push('Combinazione ruoli o dati insufficiente per completare legalmente il modulo');
+  return {formationId:preferredFormationId,reasons:[...new Set(reasons)]};
+}
+
+export function safeRecommendations(squad,dataset,now=new Date().toISOString(),statsDataset=null,preferredFormationId='4-2-3-1'){
+  const assessed=assessSquad(squad,dataset,now,statsDataset);
+  const scored=assessed.filter(row=>row.score!==null&&!row.excluded).map(row=>({player:row.player,matchday:row}));
+  if(!scored.length)return [];
+  const results=optimizeFormations(scored,FORMATIONS);
+  if(!results.length)return [];
+  const preferredIndex=results.findIndex(r=>r.formationId===preferredFormationId);
+  if(preferredIndex>=0){
+    const preferred=results[preferredIndex];
+    return [preferred,...results.filter((_,i)=>i!==preferredIndex)];
+  }
+  const issue=preferredFormationIssue(squad,assessed,preferredFormationId);
+  return [{...results[0],preferredFormationIssue:issue},...results.slice(1)];
 }
