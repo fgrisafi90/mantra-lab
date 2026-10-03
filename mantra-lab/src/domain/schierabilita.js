@@ -5,6 +5,7 @@ import { FORMATIONS } from './formations.js';
 import { canPlaySlot } from './compatibility.js';
 import { buildPlayerStatsIndex, findPlayerStats } from './playerStats.js';
 import { deriveStatSignals, combineConfidence } from './schierabilitaSignals.js';
+import { getCachedPlayerStats } from '../data/playerStatsData.js';
 
 const norm=v=>String(v??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
 const CLUB_ALIASES={ata:'atalanta',atalanta:'atalanta',bol:'bologna',bologna:'bologna',cag:'cagliari',cagliari:'cagliari',com:'como',como:'como',fio:'fiorentina',fiorentina:'fiorentina',fro:'frosinone',frosinone:'frosinone',gen:'genoa',genoa:'genoa',int:'inter',inter:'inter',internazionale:'inter',juv:'juventus',juventus:'juventus',laz:'lazio',lazio:'lazio',lec:'lecce',lecce:'lecce',mil:'milan',milan:'milan',mon:'monza',monza:'monza',nap:'napoli',napoli:'napoli',par:'parma',parma:'parma',rom:'roma',roma:'roma',sas:'sassuolo',sassuolo:'sassuolo',tor:'torino',torino:'torino',udi:'udinese',udinese:'udinese',ven:'venezia',venezia:'venezia'};
@@ -31,7 +32,8 @@ function resolveStats(player,index){
 }
 
 export function assessSquad(squad,dataset,now=new Date().toISOString(),statsDataset=null){
-  const statsIndex=statsDataset?buildPlayerStatsIndex(statsDataset):null;
+  const effectiveStats=statsDataset ?? getCachedPlayerStats();
+  const statsIndex=effectiveStats?.players?.length?buildPlayerStatsIndex(effectiveStats):null;
   return squad.map(player=>{
     const missing=reason=>({player,score:null,positives:[],negatives:[reason],provisional:false,excluded:true,confidence:'insufficiente',signalSources:{}});
     if(!dataset)return missing('Dati giornata non disponibili');
@@ -77,9 +79,9 @@ function preferredFormationIssue(squad,assessed,preferredFormationId){
   return {formationId:preferredFormationId,reasons:[...new Set(reasons)]};
 }
 
-export function safeRecommendations(squad,dataset,now=new Date().toISOString(),statsDataset=null,preferredFormationId='4-2-3-1'){
-  const assessed=assessSquad(squad,dataset,now,statsDataset);
-  const scored=assessed.filter(row=>row.score!==null&&!row.excluded).map(row=>({player:row.player,matchday:row}));
+export function recommendAssessed(assessed,preferredFormationId='4-2-3-1'){
+  const squad=(assessed||[]).map(row=>row.player);
+  const scored=(assessed||[]).filter(row=>row.score!==null&&!row.excluded).map(row=>({player:row.player,matchday:row}));
   if(!scored.length)return [];
   const results=optimizeFormations(scored,FORMATIONS);
   if(!results.length)return [];
@@ -90,4 +92,8 @@ export function safeRecommendations(squad,dataset,now=new Date().toISOString(),s
   }
   const issue=preferredFormationIssue(squad,assessed,preferredFormationId);
   return [{...results[0],preferredFormationIssue:issue},...results.slice(1)];
+}
+
+export function safeRecommendations(squad,dataset,now=new Date().toISOString(),statsDataset=null,preferredFormationId='4-2-3-1'){
+  return recommendAssessed(assessSquad(squad,dataset,now,statsDataset),preferredFormationId);
 }
