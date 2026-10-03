@@ -14,10 +14,17 @@ def('4-2-3-1',[s('m','M',['M'],39,57),s('mc','M/C',['M','C'],61,57)],[s('wt','W/
 export function getFormation(id){return FORMATIONS.find(f=>f.id===id)??FORMATIONS[0];}
 
 export const DEFAULT_FORMATION_ID = '4-2-3-1';
+const FORMATION_DEFAULT_MIGRATION_KEY='mantra-lab:formation-default-v2';
 export function ensureDefaultFormation(storage=globalThis.localStorage){
   if(!storage?.getItem || !storage?.setItem) return DEFAULT_FORMATION_ID;
   const current=storage.getItem('mantra-lab:formation');
-  if(!current || current==='3-4-1-2') storage.setItem('mantra-lab:formation',DEFAULT_FORMATION_ID);
+  const migrated=storage.getItem(FORMATION_DEFAULT_MIGRATION_KEY);
+  if(!migrated){
+    if(!current || current==='3-4-1-2') storage.setItem('mantra-lab:formation',DEFAULT_FORMATION_ID);
+    storage.setItem(FORMATION_DEFAULT_MIGRATION_KEY,'1');
+  }else if(!current){
+    storage.setItem('mantra-lab:formation',DEFAULT_FORMATION_ID);
+  }
   return storage.getItem('mantra-lab:formation') || DEFAULT_FORMATION_ID;
 }
 if(typeof globalThis.localStorage !== 'undefined') ensureDefaultFormation(globalThis.localStorage);
