@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T15:10:27.873Z",
+  "generatedAt": "2026-10-03T18:23:29.942Z",
   "season": "2026/2027",
   "matchday": 6,
   "fixtures": [
@@ -3996,26 +3996,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::adfb707431614df5aeec9b486a888815",
-      "name": "Carnesecchi",
-      "club": "Atalanta",
-      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
-      "fixtureId": "serie-a::Football_Match::d3515f39846a468281f856a8e225fe92",
-      "sampleGames": 5,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
-        "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 40.869565217391305,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 35,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::3c5522df52c945a19b271eb0aeb3d56b",
       "name": "Bernasconi",
       "club": "Atalanta",
@@ -4028,6 +4008,26 @@
         "recentForm": 50,
         "opponentContext": 90,
         "bonusPotential": 35,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::adfb707431614df5aeec9b486a888815",
+      "name": "Carnesecchi",
+      "club": "Atalanta",
+      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
+      "fixtureId": "serie-a::Football_Match::d3515f39846a468281f856a8e225fe92",
+      "sampleGames": 5,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 100,
+        "recentForm": 50,
+        "opponentContext": 90,
+        "bonusPotential": 40.869565217391305,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
@@ -9100,13 +9100,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-10-02T15:10:27.873Z",
+      "retrievedAt": "2026-10-03T18:23:29.942Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-10-02T15:10:27.873Z",
+      "retrievedAt": "2026-10-03T18:23:29.942Z",
       "status": "not-yet-available"
     }
   ]
