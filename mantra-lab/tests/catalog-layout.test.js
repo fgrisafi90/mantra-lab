@@ -9,10 +9,15 @@ test('published app aligns avatar, player, values and action', async () => {
   assert.match(html, /\.catalog-add\{width:auto!important/);
 });
 
-test('published app shows the FG Mantra logo', async () => {
+test('published app shows the current FG Mantra logo', async () => {
   const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
-  assert.match(html, /assets\/fg-mantra-logo\.svg/);
+  assert.match(html, /assets\/fg-mantra-logo-trasparente\.png/);
   assert.match(html, /<title>FG Mantra<\/title>/);
+});
+
+test('static build copies assets referenced by the published page', async () => {
+  const build = await readFile(new URL('../scripts/build.mjs', import.meta.url), 'utf8');
+  assert.match(build, /cp\(['"]assets['"],\s*['"]dist\/assets['"]/);
 });
 
 test('rosa keeps budget controls', async () => {
