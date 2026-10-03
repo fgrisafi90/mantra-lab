@@ -28,3 +28,10 @@ test('assessSquad uses the player-stats cache when legacy callers omit statsData
   const row=assessSquad([{id:'p',name:'Zielinski',club:'INT',roles:['C','T'],active:true}],dataset,'2026-10-03T10:00:00Z')[0];
   assert.equal(row.signalSources.recentForm,'stats');
 });
+
+test('legacy default 3-4-1-2 migrates once to the new 4-2-3-1 default',()=>{
+  const values=new Map([['mantra-lab:formation','3-4-1-2']]);
+  const storage={getItem:key=>values.get(key)??null,setItem:(key,value)=>values.set(key,value)};
+  ensureDefaultFormation(storage);
+  assert.equal(values.get('mantra-lab:formation'),'4-2-3-1');
+});
