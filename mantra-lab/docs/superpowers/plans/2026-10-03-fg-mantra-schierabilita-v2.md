@@ -41,7 +41,7 @@
 - Reuse: `mantra-lab/src/domain/playerStats.js`
 
 **Interfaces:**
-- Consumes: `findPlayerStats(player, index)` e `buildPlayerStatsIndex(dataset)` da `playerStats.js`.
+- Consumes: record statistiche normalizzato da `playerStats.js`.
 - Produces: `deriveStatSignals(player, stats, roles = player.roles) -> { signals, confidenceParts, reasons }` dove `signals` contiene solo `recentForm`, `bonusPotential`, `setPieces` nel range 0–100.
 - Produces: `combineConfidence({ sampleGames, stats, confidenceParts }) -> 'alta'|'media'|'bassa'`.
 
@@ -87,7 +87,7 @@ git commit -m "feat: derive statistical lineup signals"
 - Reuse: `mantra-lab/src/domain/playerStats.js`
 
 **Interfaces:**
-- Consumes: `deriveStatSignals(...)` e `combineConfidence(...)` dal Task 1.
+- Consumes: `deriveStatSignals(...)` e `combineConfidence(...)` dal Task 1; `buildPlayerStatsIndex(dataset)` e `findPlayerStats(player,index)` da `playerStats.js`.
 - Produces: `assessSquad(squad, dataset, now = new Date().toISOString(), statsDataset = null)` preservando le chiamate esistenti a 2/3 argomenti.
 - Ogni riga valida aggiunge `confidence: 'alta'|'media'|'bassa'`, `signalSources`, e motivi concreti; righe senza score aggiungono `confidence:'insufficiente'`.
 
@@ -173,9 +173,9 @@ git commit -m "feat: add legal lineup alternatives"
 
 **Files:**
 - Modify: `mantra-lab/src/domain/schierabilita.js`
-- Modify: `mantra-lab/src/domain/recommendation.js`
 - Create: `mantra-lab/tests/recommendation-v2.test.js`
 - Reuse: `mantra-lab/src/domain/formations.js`
+- Reuse: `mantra-lab/src/domain/compatibility.js`
 
 **Interfaces:**
 - Produces: `safeRecommendations(squad, dataset, now = new Date().toISOString(), statsDataset = null, preferredFormationId = '4-2-3-1')`.
@@ -195,9 +195,9 @@ Verificare che venga scelto un modulo alternativo valido e che `preferredFormati
 Run: `cd mantra-lab && node --test tests/recommendation-v2.test.js`
 Expected: FAIL sul nuovo ordinamento/output.
 
-- [ ] **Step 4: Implementare ordinamento preferenziale senza modificare `FORMATIONS`**
+- [ ] **Step 4: Implementare ordinamento preferenziale dentro `safeRecommendations` senza modificare `FORMATIONS`**
 
-`optimizer.js` continua a produrre score puri; la policy “modulo principale” vive nel livello recommendation/schierabilità.
+`optimizer.js` continua a produrre score puri; la policy “modulo principale” vive in `schierabilita.js`.
 
 - [ ] **Step 5: Implementare diagnostica del 4-2-3-1**
 
@@ -211,7 +211,7 @@ Expected: PASS.
 - [ ] **Step 7: Commit**
 
 ```bash
-git add src/domain/schierabilita.js src/domain/recommendation.js tests/recommendation-v2.test.js
+git add src/domain/schierabilita.js tests/recommendation-v2.test.js
 git commit -m "feat: prefer 4231 in lineup recommendations"
 ```
 
@@ -220,12 +220,12 @@ git commit -m "feat: prefer 4231 in lineup recommendations"
 **Files:**
 - Modify: `mantra-lab/src/app/main.js`
 - Modify: `mantra-lab/src/ui/schierabilita.js`
-- Modify: `mantra-lab/src/styles/main.css` (oppure il file stile effettivamente importato dal build; verificare prima della modifica)
+- Modify: `mantra-lab/src/styles/app.css`
 - Create: `mantra-lab/tests/schierabilita-ui.test.js`
 - Modify: `mantra-lab/tests/app-shell.test.js`
 
 **Interfaces:**
-- Consumes: `assessSquad(..., playerStatsDataset)` e `safeRecommendations(..., playerStatsDataset, '4-2-3-1')`.
+- Consumes: `assessSquad(squad, publicDataset, now, playerStatsDataset)` e `safeRecommendations(squad, publicDataset, now, playerStatsDataset, '4-2-3-1')`.
 - UI mostra: score, confidenza, motivi, 11 titolari con casella, prima alternativa e delta, issue del 4-2-3-1 quando necessario.
 - Persistenza: chiave esistente `mantra-lab:formation`, default `'4-2-3-1'` se non presente.
 
@@ -233,14 +233,14 @@ git commit -m "feat: prefer 4231 in lineup recommendations"
 
 Verificare HTML con badge `Alta/Media/Bassa`, score individuale, testo per dati insufficienti, alternativa e delta; escaping HTML deve restare attivo.
 
-- [ ] **Step 2: Scrivere regression test sul default formazione**
+- [ ] **Step 2: Scrivere regression test sul default formazione e wiring V2**
 
-Verificare che `main.js` usi `'4-2-3-1'` come fallback della chiave `mantra-lab:formation` e passi `playerStatsDataset` alla valutazione/raccomandazione.
+Verificare che `main.js` usi `'4-2-3-1'` come fallback della chiave `mantra-lab:formation` e, in `renderGiornata`, crei un singolo `const now = new Date().toISOString()` da passare sia a `safeRecommendations(squad, publicDataset, now, playerStatsDataset, '4-2-3-1')` sia a `assessSquad(squad, publicDataset, now, playerStatsDataset)`.
 
 - [ ] **Step 3: Eseguire test UI/app-shell**
 
 Run: `cd mantra-lab && node --test tests/schierabilita-ui.test.js tests/app-shell.test.js`
-Expected: FAIL sul nuovo output/default.
+Expected: FAIL sul nuovo output/default/wiring.
 
 - [ ] **Step 4: Aggiornare `renderSchierabilita`**
 
@@ -248,9 +248,9 @@ Rimuovere la frase obsoleta che dice che forma e piazzati restano sempre 50; mos
 
 - [ ] **Step 5: Aggiornare `renderGiornata` e default modulo**
 
-Passare il dataset statistiche alle funzioni V2; visualizzare dettagli della formazione principale e alternative; non cambiare navigazione o struttura delle altre sezioni.
+Passare il dataset statistiche con le firme definite sopra; visualizzare dettagli della formazione principale e alternative; non cambiare navigazione o struttura delle altre sezioni.
 
-- [ ] **Step 6: Aggiungere solo gli stili necessari**
+- [ ] **Step 6: Aggiungere solo gli stili necessari in `src/styles/app.css`**
 
 Riutilizzare classi esistenti quando possibile; aggiungere badge/confidence/alternative senza redesign complessivo.
 
@@ -262,7 +262,7 @@ Expected: PASS.
 - [ ] **Step 8: Commit**
 
 ```bash
-git add src/app/main.js src/ui/schierabilita.js src/styles tests/schierabilita-ui.test.js tests/app-shell.test.js
+git add src/app/main.js src/ui/schierabilita.js src/styles/app.css tests/schierabilita-ui.test.js tests/app-shell.test.js
 git commit -m "feat: present 4231 lineup confidence and alternatives"
 ```
 
