@@ -1,0 +1,28 @@
+name: Feature validation
+
+on:
+  push:
+    branches:
+      - feature/fg-mantra-schierabilita-v2
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: mantra-lab
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run test suite
+        run: npm test
+      - name: Build app
+        run: npm run build
