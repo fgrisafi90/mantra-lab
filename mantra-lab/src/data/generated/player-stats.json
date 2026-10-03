@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T14:39:35.389Z",
+  "generatedAt": "2026-10-03T19:43:02.774Z",
   "season": "2026/2027",
   "players": [
     {
@@ -12522,6 +12522,27 @@
       "sourceId": null,
       "name": "Leite",
       "club": "LAZ",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 0,
+        "ratedMatches": 0,
+        "averageRating": 0,
+        "fantasyAverage": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Obric",
+      "club": "ATA",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
