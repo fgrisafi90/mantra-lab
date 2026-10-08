@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T19:32:50.557Z",
+  "generatedAt": "2026-10-08T20:34:40.211Z",
   "season": "2026/2027",
   "players": [
     {
@@ -12585,6 +12585,27 @@
       "sourceId": null,
       "name": "Neto",
       "club": "JUV",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 0,
+        "ratedMatches": 0,
+        "averageRating": 0,
+        "fantasyAverage": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Darmian",
+      "club": "BOL",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
