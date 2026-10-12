@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T02:26:29.905Z",
+  "generatedAt": "2026-10-12T10:55:33.965Z",
   "season": "2026/2027",
   "players": [
     {
@@ -2052,7 +2052,7 @@
         "fantasyAverage": 6.6,
         "goals": 1,
         "assists": 0,
-        "yellowCards": 0,
+        "yellowCards": 1,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
