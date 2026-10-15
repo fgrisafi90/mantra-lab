@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T23:38:12.744Z",
+  "generatedAt": "2026-10-15T23:44:20.211Z",
   "season": "2026/2027",
   "matchday": 7,
   "fixtures": [
@@ -2716,26 +2716,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
-      "name": "Raimondo",
-      "club": "Frosinone",
-      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
-      "fixtureId": "serie-a::Football_Match::23709b4adf6845aa9dd6cd12e68918bb",
-      "sampleGames": 6,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 95.55555555555556,
-        "recentForm": 50,
-        "opponentContext": 68.4,
-        "bonusPotential": 66.3953488372093,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 43.7906976744186,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::b629fb0c40f34d83864423c077fc8e9a",
       "name": "Calvani",
       "club": "Frosinone",
@@ -2771,6 +2751,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
+      "name": "Raimondo",
+      "club": "Frosinone",
+      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
+      "fixtureId": "serie-a::Football_Match::23709b4adf6845aa9dd6cd12e68918bb",
+      "sampleGames": 6,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 95.55555555555556,
+        "recentForm": 50,
+        "opponentContext": 68.4,
+        "bonusPotential": 66.3953488372093,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 43.7906976744186,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3996,26 +3996,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::adfb707431614df5aeec9b486a888815",
-      "name": "Carnesecchi",
-      "club": "Atalanta",
-      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
-      "fixtureId": "serie-a::Football_Match::ea3d35e8daf949f3ab54ddcb1b94725f",
-      "sampleGames": 6,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
-        "recentForm": 50,
-        "opponentContext": 54,
-        "bonusPotential": 39.89637305699482,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 35,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::3c5522df52c945a19b271eb0aeb3d56b",
       "name": "Bernasconi",
       "club": "Atalanta",
@@ -4028,6 +4008,26 @@
         "recentForm": 50,
         "opponentContext": 54,
         "bonusPotential": 35,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::adfb707431614df5aeec9b486a888815",
+      "name": "Carnesecchi",
+      "club": "Atalanta",
+      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
+      "fixtureId": "serie-a::Football_Match::ea3d35e8daf949f3ab54ddcb1b94725f",
+      "sampleGames": 6,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 100,
+        "recentForm": 50,
+        "opponentContext": 54,
+        "bonusPotential": 39.89637305699482,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
@@ -9420,13 +9420,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-10-14T23:38:12.744Z",
+      "retrievedAt": "2026-10-15T23:44:20.211Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-10-14T23:38:12.744Z",
+      "retrievedAt": "2026-10-15T23:44:20.211Z",
       "status": "not-yet-available"
     }
   ]
