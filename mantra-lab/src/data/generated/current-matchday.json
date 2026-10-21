@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T00:00:14.728Z",
+  "generatedAt": "2026-10-21T22:59:32.539Z",
   "season": "2026/2027",
   "matchday": 8,
   "fixtures": [
@@ -5276,26 +5276,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
-      "name": "Piccoli",
-      "club": "Bologna",
-      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
-      "fixtureId": "serie-a::Football_Match::35dc3bf2680a41d2a83a242a8a4e61a7",
-      "sampleGames": 7,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 75.71428571428571,
-        "recentForm": 50,
-        "opponentContext": 58.8,
-        "bonusPotential": 43.490566037735846,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 38.16981132075472,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
       "name": "Bernardeschi",
       "club": "Bologna",
@@ -5311,6 +5291,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 47.07185628742515,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
+      "name": "Piccoli",
+      "club": "Bologna",
+      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
+      "fixtureId": "serie-a::Football_Match::35dc3bf2680a41d2a83a242a8a4e61a7",
+      "sampleGames": 7,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 75.71428571428571,
+        "recentForm": 50,
+        "opponentContext": 58.8,
+        "bonusPotential": 43.490566037735846,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 38.16981132075472,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -9600,13 +9600,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-10-21T00:00:14.728Z",
+      "retrievedAt": "2026-10-21T22:59:32.539Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-10-21T00:00:14.728Z",
+      "retrievedAt": "2026-10-21T22:59:32.539Z",
       "status": "not-yet-available"
     }
   ]
