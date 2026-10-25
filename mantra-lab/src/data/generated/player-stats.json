@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T16:26:23.194Z",
+  "generatedAt": "2026-10-25T19:40:11.368Z",
   "season": "2026/2027",
   "players": [
     {
@@ -56,7 +56,7 @@
         "averageRating": 7,
         "fantasyAverage": 9.5,
         "goals": 1,
-        "assists": 0,
+        "assists": 1,
         "yellowCards": 1,
         "redCards": 0,
         "ownGoals": null,
@@ -3796,7 +3796,7 @@
         "goals": 1,
         "assists": 0,
         "yellowCards": 2,
-        "redCards": 0,
+        "redCards": 1,
         "ownGoals": null,
         "penaltiesScored": 0,
         "penaltiesTotal": 0
@@ -6712,7 +6712,7 @@
         "ratedMatches": 4,
         "averageRating": 5.75,
         "fantasyAverage": 5.62,
-        "goals": 0,
+        "goals": 1,
         "assists": 0,
         "yellowCards": 1,
         "redCards": 0,
@@ -7069,8 +7069,8 @@
         "ratedMatches": 7,
         "averageRating": 5.64,
         "fantasyAverage": 5.57,
-        "goals": 0,
-        "assists": 0,
+        "goals": 1,
+        "assists": 1,
         "yellowCards": 1,
         "redCards": 0,
         "ownGoals": null,
