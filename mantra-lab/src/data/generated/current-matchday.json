@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:26:40.440Z",
+  "generatedAt": "2026-11-04T01:33:09.433Z",
   "season": "2026/2027",
   "matchday": 11,
   "fixtures": [
@@ -307,7 +307,7 @@
         "expectedMinutes": 96.5432098765432,
         "recentForm": 50,
         "opponentContext": 51.6,
-        "bonusPotential": 38.62531969309463,
+        "bonusPotential": 42.250639386189256,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35.966751918158565,
@@ -1444,13 +1444,13 @@
       "sampleGames": 8,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 55.13888888888889,
+        "expectedMinutes": 55.27777777777778,
         "recentForm": 50,
         "opponentContext": 54,
-        "bonusPotential": 49.28211586901763,
+        "bonusPotential": 49.246231155778894,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 38.80856423173803,
+        "tacticalOpportunity": 38.79899497487437,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1744,7 +1744,7 @@
       "sampleGames": 7,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 52.6984126984127,
+        "expectedMinutes": 52.85714285714286,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
         "bonusPotential": 35,
@@ -1790,7 +1790,7 @@
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 35.7907949790795,
+        "tacticalOpportunity": 35.789968652037615,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1924,13 +1924,13 @@
       "sampleGames": 7,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 79.68253968253968,
+        "expectedMinutes": 79.52380952380952,
         "recentForm": 50,
         "opponentContext": 44.4,
-        "bonusPotential": 43.06772908366534,
+        "bonusPotential": 43.08383233532934,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 38.01195219123506,
+        "tacticalOpportunity": 38.01796407185629,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1970,7 +1970,7 @@
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 36.66519823788546,
+        "tacticalOpportunity": 36.663366336633665,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -2004,13 +2004,13 @@
       "sampleGames": 10,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 73.77777777777779,
+        "expectedMinutes": 73.88888888888889,
         "recentForm": 50,
         "opponentContext": 56.4,
-        "bonusPotential": 65.49698795180723,
+        "bonusPotential": 65.45112781954887,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 41.83132530120482,
+        "tacticalOpportunity": 41.821052631578944,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -2070,7 +2070,7 @@
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 35.79831045406547,
+        "tacticalOpportunity": 35.79746835443038,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -2124,7 +2124,7 @@
       "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 81.11111111111111,
+        "expectedMinutes": 81.66666666666667,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
         "bonusPotential": 35,
@@ -2604,10 +2604,10 @@
       "sampleGames": 6,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 39.44444444444444,
+        "expectedMinutes": 39.81481481481482,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
-        "bonusPotential": 48.309859154929576,
+        "bonusPotential": 48.18604651162791,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
@@ -2716,26 +2716,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
-      "name": "Raimondo",
-      "club": "Frosinone",
-      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
-      "fixtureId": "serie-a::Football_Match::f293cf5a937c4ba89b3049a508f743ab",
-      "sampleGames": 10,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 89.44444444444444,
-        "recentForm": 50,
-        "opponentContext": 70.8,
-        "bonusPotential": 75.24844720496895,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 45.33043478260869,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::b629fb0c40f34d83864423c077fc8e9a",
       "name": "Calvani",
       "club": "Frosinone",
@@ -2771,6 +2751,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
+      "name": "Raimondo",
+      "club": "Frosinone",
+      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
+      "fixtureId": "serie-a::Football_Match::f293cf5a937c4ba89b3049a508f743ab",
+      "sampleGames": 10,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 89.44444444444444,
+        "recentForm": 50,
+        "opponentContext": 70.8,
+        "bonusPotential": 75.24844720496895,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 45.33043478260869,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -2984,13 +2984,13 @@
       "sampleGames": 10,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 99.22222222222223,
+        "expectedMinutes": 99.33333333333334,
         "recentForm": 50,
         "opponentContext": 70.8,
-        "bonusPotential": 61.304591265397534,
+        "bonusPotential": 61.2751677852349,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.77267637178051,
+        "tacticalOpportunity": 41.76510067114094,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3624,10 +3624,10 @@
       "sampleGames": 9,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 88.51851851851852,
+        "expectedMinutes": 88.39506172839506,
         "recentForm": 50,
         "opponentContext": 70.8,
-        "bonusPotential": 38.95397489539749,
+        "bonusPotential": 38.95949720670391,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
@@ -3784,13 +3784,13 @@
       "sampleGames": 7,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 34.285714285714285,
+        "expectedMinutes": 34.12698412698413,
         "recentForm": 50,
         "opponentContext": 80.4,
-        "bonusPotential": 53.75,
+        "bonusPotential": 53.83720930232558,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 42,
+        "tacticalOpportunity": 42.032558139534885,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3944,7 +3944,7 @@
       "sampleGames": 4,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 27.22222222222222,
+        "expectedMinutes": 27.500000000000004,
         "recentForm": 50,
         "opponentContext": 66,
         "bonusPotential": 35,
@@ -3996,26 +3996,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::3c5522df52c945a19b271eb0aeb3d56b",
-      "name": "Bernasconi",
-      "club": "Atalanta",
-      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
-      "fixtureId": "serie-a::Football_Match::3a00f86021a14ed2b3a424e3e3c07fc8",
-      "sampleGames": 8,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 77.5,
-        "recentForm": 50,
-        "opponentContext": 85.19999999999999,
-        "bonusPotential": 35,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 37.70967741935484,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::adfb707431614df5aeec9b486a888815",
       "name": "Carnesecchi",
       "club": "Atalanta",
@@ -4027,10 +4007,30 @@
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
-        "bonusPotential": 37.940871369294605,
+        "bonusPotential": 37.93782383419689,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::3c5522df52c945a19b271eb0aeb3d56b",
+      "name": "Bernasconi",
+      "club": "Atalanta",
+      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
+      "fixtureId": "serie-a::Football_Match::3a00f86021a14ed2b3a424e3e3c07fc8",
+      "sampleGames": 8,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 77.63888888888889,
+        "recentForm": 50,
+        "opponentContext": 85.19999999999999,
+        "bonusPotential": 35,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 37.704830053667266,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -4084,7 +4084,7 @@
       "sampleGames": 8,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 58.88888888888889,
+        "expectedMinutes": 59.166666666666664,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
         "bonusPotential": 35,
@@ -4884,13 +4884,13 @@
       "sampleGames": 10,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 89.8888888888889,
+        "expectedMinutes": 90,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
-        "bonusPotential": 47.01483312731767,
+        "bonusPotential": 47,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 39.67243510506798,
+        "tacticalOpportunity": 39.666666666666664,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -4904,13 +4904,13 @@
       "sampleGames": 9,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 51.9753086419753,
+        "expectedMinutes": 52.09876543209876,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
-        "bonusPotential": 44.61995249406176,
+        "bonusPotential": 44.59715639810426,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 36.795724465558195,
+        "tacticalOpportunity": 36.791469194312796,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -4924,13 +4924,13 @@
       "sampleGames": 10,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 75.55555555555556,
+        "expectedMinutes": 75.66666666666666,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
-        "bonusPotential": 79.07352941176471,
+        "bonusPotential": 79.00881057268722,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 49.45294117647059,
+        "tacticalOpportunity": 49.431718061674005,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5144,13 +5144,13 @@
       "sampleGames": 8,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 56.80555555555556,
+        "expectedMinutes": 56.94444444444444,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
-        "bonusPotential": 51.83374083129584,
+        "bonusPotential": 51.79268292682927,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 40.54523227383863,
+        "tacticalOpportunity": 40.53170731707317,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5276,26 +5276,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
-      "name": "Piccoli",
-      "club": "Bologna",
-      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
-      "fixtureId": "serie-a::Football_Match::9ed516bb6d154cc783d9f8e49494beae",
-      "sampleGames": 7,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 75.71428571428571,
-        "recentForm": 50,
-        "opponentContext": 78,
-        "bonusPotential": 43.490566037735846,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 38.16981132075472,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
       "name": "Bernardeschi",
       "club": "Bologna",
@@ -5311,6 +5291,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 46.37619699042408,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
+      "name": "Piccoli",
+      "club": "Bologna",
+      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
+      "fixtureId": "serie-a::Football_Match::9ed516bb6d154cc783d9f8e49494beae",
+      "sampleGames": 7,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 75.71428571428571,
+        "recentForm": 50,
+        "opponentContext": 78,
+        "bonusPotential": 43.490566037735846,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 38.16981132075472,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5564,13 +5564,13 @@
       "sampleGames": 9,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 95.55555555555556,
+        "expectedMinutes": 95.43209876543209,
         "recentForm": 50,
         "opponentContext": 61.2,
-        "bonusPotential": 40.23255813953488,
+        "bonusPotential": 40.23932729624838,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 35.97674418604651,
+        "tacticalOpportunity": 35.97800776196637,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5784,13 +5784,13 @@
       "sampleGames": 7,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 77.77777777777779,
+        "expectedMinutes": 77.61904761904762,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.17142857142857,
+        "tacticalOpportunity": 41.1840490797546,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5876,26 +5876,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::ce4b4184d61f402698ac6c9e954d2b31",
-      "name": "Dybala",
-      "club": "Roma",
-      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
-      "fixtureId": "serie-a::Football_Match::77528f387ef442ce82bf5f5de73fb66b",
-      "sampleGames": 6,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 95.74074074074075,
-        "recentForm": 50,
-        "opponentContext": 82.8,
-        "bonusPotential": 56.93423597678917,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 43.77369439071566,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::72d8637dba5842c2a7f8e74dd686ea81",
       "name": "Hermoso",
       "club": "Roma",
@@ -5911,6 +5891,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 36.11013215859031,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::ce4b4184d61f402698ac6c9e954d2b31",
+      "name": "Dybala",
+      "club": "Roma",
+      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
+      "fixtureId": "serie-a::Football_Match::77528f387ef442ce82bf5f5de73fb66b",
+      "sampleGames": 6,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 95.74074074074075,
+        "recentForm": 50,
+        "opponentContext": 82.8,
+        "bonusPotential": 56.93423597678917,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 43.77369439071566,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6076,26 +6076,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::c590f7d118754da79d5abc5618322b51",
-      "name": "Dodô",
-      "club": "Fiorentina",
-      "teamId": "serie-a::Football_Team::5bce12d5bd864c2297695d970f92576d",
-      "fixtureId": "serie-a::Football_Match::4dd1f45d0f91439fa54a631e54d2dc9b",
-      "sampleGames": 4,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 45,
-        "recentForm": 50,
-        "opponentContext": 58.8,
-        "bonusPotential": 35,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 35,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::e7c5f1fc7dab402bbdfbc2d47096fb30",
       "name": "Fagioli",
       "club": "Fiorentina",
@@ -6111,6 +6091,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 38.76587795765878,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::c590f7d118754da79d5abc5618322b51",
+      "name": "Dodô",
+      "club": "Fiorentina",
+      "teamId": "serie-a::Football_Team::5bce12d5bd864c2297695d970f92576d",
+      "fixtureId": "serie-a::Football_Match::4dd1f45d0f91439fa54a631e54d2dc9b",
+      "sampleGames": 4,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 45,
+        "recentForm": 50,
+        "opponentContext": 58.8,
+        "bonusPotential": 35,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6204,13 +6204,13 @@
       "sampleGames": 10,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 84.66666666666667,
+        "expectedMinutes": 84.77777777777777,
         "recentForm": 50,
         "opponentContext": 58.8,
-        "bonusPotential": 50.94488188976378,
+        "bonusPotential": 50.92398427260812,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 39.960629921259844,
+        "tacticalOpportunity": 39.95412844036697,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6850,7 +6850,7 @@
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 43.4,
+        "tacticalOpportunity": 35,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6984,7 +6984,7 @@
       "sampleGames": 8,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 73.61111111111111,
+        "expectedMinutes": 73.88888888888889,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
         "bonusPotential": 35,
@@ -7004,13 +7004,13 @@
       "sampleGames": 9,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 96.04938271604938,
+        "expectedMinutes": 96.17283950617283,
         "recentForm": 50,
         "opponentContext": 80.4,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 35.97172236503856,
+        "tacticalOpportunity": 35.97047496790757,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -7190,7 +7190,7 @@
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 36.82608695652174,
+        "tacticalOpportunity": 36.82829504232164,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -7564,13 +7564,13 @@
       "sampleGames": 6,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 62.96296296296296,
+        "expectedMinutes": 63.14814814814815,
         "recentForm": 50,
         "opponentContext": 54,
-        "bonusPotential": 46.911764705882355,
+        "bonusPotential": 46.87683284457478,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 37.22352941176471,
+        "tacticalOpportunity": 37.21700879765396,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -7844,13 +7844,13 @@
       "sampleGames": 8,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 44.166666666666664,
+        "expectedMinutes": 44.02777777777778,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
-        "bonusPotential": 65.56603773584905,
+        "bonusPotential": 65.66246056782335,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 37.37735849056604,
+        "tacticalOpportunity": 37.38485804416404,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -7924,13 +7924,13 @@
       "sampleGames": 7,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 31.90476190476191,
+        "expectedMinutes": 32.22222222222222,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 38.76119402985075,
+        "tacticalOpportunity": 38.724137931034484,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -8564,13 +8564,13 @@
       "sampleGames": 7,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 41.11111111111111,
+        "expectedMinutes": 41.26984126984127,
         "recentForm": 50,
         "opponentContext": 66,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 43.75675675675676,
+        "tacticalOpportunity": 43.723076923076924,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -9104,7 +9104,7 @@
       "sampleGames": 5,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 65.33333333333333,
+        "expectedMinutes": 65.11111111111111,
         "recentForm": 50,
         "opponentContext": 54,
         "bonusPotential": 35,
@@ -9887,7 +9887,7 @@
         "expectedMinutes": 100,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
-        "bonusPotential": 56.42857142857143,
+        "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
@@ -9944,7 +9944,7 @@
       "sampleGames": 2,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 20,
+        "expectedMinutes": 20.555555555555554,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
         "bonusPotential": 35,
@@ -10024,7 +10024,7 @@
       "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 18.88888888888889,
+        "expectedMinutes": 21.11111111111111,
         "recentForm": 50,
         "opponentContext": 85.19999999999999,
         "bonusPotential": 35,
@@ -10044,7 +10044,7 @@
       "sampleGames": 1,
       "signals": {
         "availability": 72,
-        "expectedMinutes": 4.444444444444445,
+        "expectedMinutes": 6.666666666666667,
         "recentForm": 50,
         "opponentContext": 63.599999999999994,
         "bonusPotential": 35,
@@ -10060,13 +10060,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-03T00:26:40.440Z",
+      "retrievedAt": "2026-11-04T01:33:09.433Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-03T00:26:40.440Z",
+      "retrievedAt": "2026-11-04T01:33:09.433Z",
       "status": "not-yet-available"
     }
   ]
