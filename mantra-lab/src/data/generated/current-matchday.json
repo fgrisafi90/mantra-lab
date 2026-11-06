@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T04:55:19.562Z",
+  "generatedAt": "2026-11-06T23:55:50.471Z",
   "season": "2026/2027",
   "matchday": 11,
   "fixtures": [
@@ -11,10 +11,10 @@
       "away": "Udinese",
       "homeId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "awayId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
-      "played": false,
-      "status": "UPCOMING",
-      "homeScore": 0,
-      "awayScore": 0
+      "played": true,
+      "status": "FINISHED",
+      "homeScore": 2,
+      "awayScore": 1
     },
     {
       "id": "serie-a::Football_Match::f293cf5a937c4ba89b3049a508f743ab",
@@ -401,16 +401,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 9,
+      "sampleGames": 10,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 40,
+        "opponentContext": 87.6,
+        "bonusPotential": 39.581447963800905,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 35.93333333333333,
+        "tacticalOpportunity": 35.8552036199095,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -421,13 +421,13 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 35,
+        "opponentContext": 87.6,
+        "bonusPotential": 38.831598864711445,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
@@ -441,16 +441,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 47.3015873015873,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 48.59060402684564,
+        "opponentContext": 87.6,
+        "bonusPotential": 46.187845303867405,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 37.53691275167785,
+        "tacticalOpportunity": 37.08839779005525,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -466,7 +466,7 @@
         "availability": 72,
         "expectedMinutes": 53.333333333333336,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 56.09375,
         "setPieces": 50,
         "homeAwayContext": 50,
@@ -661,16 +661,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 5,
+      "sampleGames": 6,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 84.66666666666667,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 45.62992125984252,
+        "opponentContext": 87.6,
+        "bonusPotential": 43.508403361344534,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 40.95275590551181,
+        "tacticalOpportunity": 39.76470588235294,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -681,16 +681,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 5,
+      "sampleGames": 6,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 71.33333333333334,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 47.61682242990654,
+        "opponentContext": 87.6,
+        "bonusPotential": 45.25316455696203,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 37.35514018691589,
+        "tacticalOpportunity": 36.913924050632914,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -701,16 +701,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 90.44444444444444,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 36.85749385749386,
+        "tacticalOpportunity": 36.663366336633665,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -801,16 +801,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 5,
+      "sampleGames": 6,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 94.66666666666667,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 36.774647887323944,
+        "tacticalOpportunity": 36.473684210526315,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -901,16 +901,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 90,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 52,
+        "opponentContext": 87.6,
+        "bonusPotential": 50.21546961325967,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.53333333333333,
+        "tacticalOpportunity": 40.847513812154695,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -921,16 +921,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 99.8888888888889,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 51.66852057842047,
+        "opponentContext": 87.6,
+        "bonusPotential": 50.197768762677484,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.727474972191324,
+        "tacticalOpportunity": 43.4340770791075,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -941,16 +941,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 39.42622950819672,
+        "opponentContext": 87.6,
+        "bonusPotential": 39.00990099009901,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 37.47868852459016,
+        "tacticalOpportunity": 37.24554455445545,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -1023,16 +1023,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 82.77777777777777,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -1181,18 +1181,18 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 8,
+      "sampleGames": 9,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 59.583333333333336,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 40.28671328671329,
+        "tacticalOpportunity": 40.18993135011441,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -1221,18 +1221,18 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 4,
+      "sampleGames": 5,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 31.38888888888889,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 41.690265486725664,
+        "tacticalOpportunity": 41.247933884297524,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -1341,18 +1341,18 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 9,
+      "sampleGames": 10,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 46.17283950617284,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 42.580213903743314,
+        "opponentContext": 87.6,
+        "bonusPotential": 42.177215189873415,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 39.042780748663105,
+        "tacticalOpportunity": 38.82784810126582,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -1403,16 +1403,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 5,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 40.22222222222223,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -2716,6 +2716,26 @@
       }
     },
     {
+      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
+      "name": "Raimondo",
+      "club": "Frosinone",
+      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
+      "fixtureId": "serie-a::Football_Match::f293cf5a937c4ba89b3049a508f743ab",
+      "sampleGames": 10,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 89.44444444444444,
+        "recentForm": 50,
+        "opponentContext": 70.8,
+        "bonusPotential": 75.24844720496895,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 45.33043478260869,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
       "id": "serie-a::Football_Player::b629fb0c40f34d83864423c077fc8e9a",
       "name": "Calvani",
       "club": "Frosinone",
@@ -2751,26 +2771,6 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
-      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
-      "name": "Raimondo",
-      "club": "Frosinone",
-      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
-      "fixtureId": "serie-a::Football_Match::f293cf5a937c4ba89b3049a508f743ab",
-      "sampleGames": 10,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 89.44444444444444,
-        "recentForm": 50,
-        "opponentContext": 70.8,
-        "bonusPotential": 75.24844720496895,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 45.33043478260869,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3141,16 +3141,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 70.7936507936508,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 35,
+        "opponentContext": 90,
+        "bonusPotential": 42.64150943396226,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 38.39013452914798,
+        "tacticalOpportunity": 39.27924528301887,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3161,12 +3161,12 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
@@ -3181,16 +3181,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 80.55555555555556,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 40.58620689655172,
+        "opponentContext": 90,
+        "bonusPotential": 40.0061804697157,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 42.29931034482759,
+        "tacticalOpportunity": 41.54140914709518,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3203,16 +3203,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 6,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 79.81481481481481,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 48.15545243619489,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 36.754060324825986,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3221,16 +3221,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 47.01648351648352,
+        "opponentContext": 90,
+        "bonusPotential": 48.701492537313435,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 37.49230769230769,
+        "tacticalOpportunity": 38.0089552238806,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3241,16 +3241,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 93.11111111111111,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 35,
+        "opponentContext": 90,
+        "bonusPotential": 39.33618843683084,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 37.70644391408115,
+        "tacticalOpportunity": 38.23768736616702,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3426,7 +3426,7 @@
         "availability": 72,
         "expectedMinutes": 80,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
@@ -3443,16 +3443,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 3,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 77.77777777777779,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3463,16 +3463,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 7,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 82.69841269841271,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3481,16 +3481,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 10,
+      "sampleGames": 11,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 43.910891089108915,
+        "opponentContext": 90,
+        "bonusPotential": 43.06772908366534,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 45.81188118811881,
+        "tacticalOpportunity": 45.54183266932271,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3523,16 +3523,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 5,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 45.77777777777778,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3661,18 +3661,18 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 69.52380952380952,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 41.47260273972603,
+        "opponentContext": 90,
+        "bonusPotential": 41.109913793103445,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 36.726027397260275,
+        "tacticalOpportunity": 36.62931034482759,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3743,16 +3743,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 2,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 27.77777777777778,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3883,16 +3883,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 6,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 56.29629629629629,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 57.64802631578947,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 37.48684210526316,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -3903,16 +3903,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 23.055555555555557,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 44.10843373493976,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -5276,26 +5276,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
-      "name": "Bernardeschi",
-      "club": "Bologna",
-      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
-      "fixtureId": "serie-a::Football_Match::9ed516bb6d154cc783d9f8e49494beae",
-      "sampleGames": 10,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 81.22222222222221,
-        "recentForm": 50,
-        "opponentContext": 78,
-        "bonusPotential": 51.62106703146375,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 46.37619699042408,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
       "name": "Piccoli",
       "club": "Bologna",
@@ -5311,6 +5291,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 38.16981132075472,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
+      "name": "Bernardeschi",
+      "club": "Bologna",
+      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
+      "fixtureId": "serie-a::Football_Match::9ed516bb6d154cc783d9f8e49494beae",
+      "sampleGames": 10,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 81.22222222222221,
+        "recentForm": 50,
+        "opponentContext": 78,
+        "bonusPotential": 51.62106703146375,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 46.37619699042408,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5876,26 +5876,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::72d8637dba5842c2a7f8e74dd686ea81",
-      "name": "Hermoso",
-      "club": "Roma",
-      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
-      "fixtureId": "serie-a::Football_Match::77528f387ef442ce82bf5f5de73fb66b",
-      "sampleGames": 9,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 84.07407407407408,
-        "recentForm": 50,
-        "opponentContext": 82.8,
-        "bonusPotential": 40.947136563876654,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 36.11013215859031,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::ce4b4184d61f402698ac6c9e954d2b31",
       "name": "Dybala",
       "club": "Roma",
@@ -5911,6 +5891,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 43.77369439071566,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::72d8637dba5842c2a7f8e74dd686ea81",
+      "name": "Hermoso",
+      "club": "Roma",
+      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
+      "fixtureId": "serie-a::Football_Match::77528f387ef442ce82bf5f5de73fb66b",
+      "sampleGames": 9,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 84.07407407407408,
+        "recentForm": 50,
+        "opponentContext": 82.8,
+        "bonusPotential": 40.947136563876654,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 36.11013215859031,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6076,26 +6076,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::e7c5f1fc7dab402bbdfbc2d47096fb30",
-      "name": "Fagioli",
-      "club": "Fiorentina",
-      "teamId": "serie-a::Football_Team::5bce12d5bd864c2297695d970f92576d",
-      "fixtureId": "serie-a::Football_Match::4dd1f45d0f91439fa54a631e54d2dc9b",
-      "sampleGames": 10,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 89.22222222222221,
-        "recentForm": 50,
-        "opponentContext": 58.8,
-        "bonusPotential": 42.06102117061021,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 38.76587795765878,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::c590f7d118754da79d5abc5618322b51",
       "name": "Dodô",
       "club": "Fiorentina",
@@ -6111,6 +6091,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::e7c5f1fc7dab402bbdfbc2d47096fb30",
+      "name": "Fagioli",
+      "club": "Fiorentina",
+      "teamId": "serie-a::Football_Team::5bce12d5bd864c2297695d970f92576d",
+      "fixtureId": "serie-a::Football_Match::4dd1f45d0f91439fa54a631e54d2dc9b",
+      "sampleGames": 10,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 89.22222222222221,
+        "recentForm": 50,
+        "opponentContext": 58.8,
+        "bonusPotential": 42.06102117061021,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 38.76587795765878,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6521,16 +6521,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 100,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 36.19242902208202,
+        "tacticalOpportunity": 36.03703703703704,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6541,16 +6541,16 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 9,
+      "sampleGames": 10,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 83.08641975308642,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 39.21248142644873,
+        "opponentContext": 90,
+        "bonusPotential": 38.69140625,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 36.12332838038633,
+        "tacticalOpportunity": 35.984375,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6561,18 +6561,18 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 32.22222222222222,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 38.724137931034484,
+        "tacticalOpportunity": 38.532710280373834,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -6581,16 +6581,16 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 9,
+      "sampleGames": 10,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 76.79012345679013,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 44.11575562700965,
+        "opponentContext": 87.6,
+        "bonusPotential": 42.90794979079498,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 38.646302250803856,
+        "tacticalOpportunity": 39.21757322175732,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -6803,16 +6803,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 5,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 37.55555555555555,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 39.47337278106509,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -6903,16 +6903,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 5,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 25.77777777777778,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -7858,18 +7858,18 @@
     {
       "id": "serie-a::Football_Player::866d618d06994344b1d86dd8eb428c84",
       "name": "Diego Carlos",
-      "club": "Parma",
-      "teamId": "serie-a::Football_Team::3294993c79b14d918ccdc78da0fb90c5",
-      "fixtureId": "serie-a::Football_Match::9ed516bb6d154cc783d9f8e49494beae",
+      "club": "Como",
+      "teamId": "serie-a::Football_Team::367e70bf50b346209f8a0f16429850cb",
+      "fixtureId": "serie-a::Football_Match::c636a37682d84d49bf78ea204db93d6f",
       "sampleGames": 6,
       "signals": {
         "availability": 72,
         "expectedMinutes": 81.48148148148148,
         "recentForm": 50,
-        "opponentContext": 63.599999999999994,
+        "opponentContext": 46.8,
         "bonusPotential": 35,
         "setPieces": 50,
-        "homeAwayContext": 60,
+        "homeAwayContext": 50,
         "tacticalOpportunity": 38.43636363636364,
         "unavailable": false,
         "majorDoubt": false
@@ -7943,16 +7943,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 3,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 27.77777777777778,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -8001,12 +8001,12 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 8,
+      "sampleGames": 9,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 88.05555555555556,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
@@ -8321,18 +8321,18 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 6,
+      "sampleGames": 7,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 95,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 36.473684210526315,
+        "tacticalOpportunity": 36.413084112149534,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -8341,18 +8341,18 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 6,
+      "sampleGames": 7,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 57.22222222222222,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
-        "tacticalOpportunity": 37.44660194174757,
+        "tacticalOpportunity": 37.3625,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -8361,12 +8361,12 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 95.55555555555556,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
@@ -8841,18 +8841,18 @@
       "club": "Udinese",
       "teamId": "serie-a::Football_Team::630b1e3631db42498d1b7bc94595c5e0",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 7,
+      "sampleGames": 8,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 71.42857142857143,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
-        "tacticalOpportunity": 36.68,
+        "tacticalOpportunity": 38.143451143451145,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -8863,16 +8863,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 2,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 14.444444444444443,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -8986,7 +8986,7 @@
         "availability": 72,
         "expectedMinutes": 29.444444444444446,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
@@ -9003,16 +9003,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 2,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 18.333333333333332,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 87.6,
+        "opponentContext": 90,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -9383,16 +9383,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 2,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 20.555555555555554,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -9406,7 +9406,7 @@
         "availability": 72,
         "expectedMinutes": 39.44444444444444,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
@@ -9461,13 +9461,13 @@
       "club": "Venezia",
       "teamId": "serie-a::Football_Team::a28236708d214df3a2e2e04ceb7e5c54",
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
-      "sampleGames": 4,
+      "sampleGames": 5,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 61.94444444444444,
+        "availability": 100,
+        "expectedMinutes": 95,
         "recentForm": 50,
-        "opponentContext": 87.6,
-        "bonusPotential": 35,
+        "opponentContext": 90,
+        "bonusPotential": 44.67576791808874,
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
@@ -9803,16 +9803,16 @@
       "fixtureId": "serie-a::Football_Match::bf37357a39104053ba3416ab143870e9",
       "sampleGames": 1,
       "signals": {
-        "availability": 72,
-        "expectedMinutes": 13.333333333333334,
+        "availability": 70,
+        "expectedMinutes": 35,
         "recentForm": 50,
-        "opponentContext": 90,
+        "opponentContext": 87.6,
         "bonusPotential": 35,
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
         "unavailable": false,
-        "majorDoubt": false
+        "majorDoubt": true
       }
     },
     {
@@ -10060,14 +10060,14 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-06T04:55:19.562Z",
+      "retrievedAt": "2026-11-06T23:55:50.471Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-06T04:55:19.562Z",
-      "status": "not-yet-available"
+      "retrievedAt": "2026-11-06T23:55:50.471Z",
+      "status": "ok"
     }
   ]
 }
