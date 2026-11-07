@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T23:12:26.235Z",
+  "generatedAt": "2026-11-07T02:50:49.790Z",
   "season": "2026/2027",
   "players": [
     {
@@ -1306,27 +1306,6 @@
     },
     {
       "sourceId": null,
-      "name": "Ekkelenkamp",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 6,
-        "fantasyAverage": 7,
-        "goals": 3,
-        "assists": 1,
-        "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Kessi&#xE8;",
       "club": "ATA",
       "profileUrl": null,
@@ -1442,6 +1421,27 @@
         "averageRating": 6.25,
         "fantasyAverage": 6.92,
         "goals": 1,
+        "assists": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Ekkelenkamp",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 6,
+        "fantasyAverage": 6.91,
+        "goals": 3,
         "assists": 1,
         "yellowCards": 0,
         "redCards": 0,
@@ -1675,6 +1675,27 @@
         "goals": 3,
         "assists": 0,
         "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Hainaut",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 6.09,
+        "fantasyAverage": 6.82,
+        "goals": 2,
+        "assists": 2,
+        "yellowCards": 0,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -1952,27 +1973,6 @@
         "ownGoals": null,
         "penaltiesScored": 1,
         "penaltiesTotal": 1
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Hainaut",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 6,
-        "fantasyAverage": 6.7,
-        "goals": 2,
-        "assists": 2,
-        "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
       },
       "matchdays": []
     },
@@ -2608,48 +2608,6 @@
     },
     {
       "sourceId": null,
-      "name": "Palma",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 5,
-        "ratedMatches": 5,
-        "averageRating": 5.9,
-        "fantasyAverage": 6.5,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Kamara H.",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 5.85,
-        "fantasyAverage": 6.5,
-        "goals": 2,
-        "assists": 1,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Braganca",
       "club": "TOR",
       "profileUrl": null,
@@ -2850,6 +2808,27 @@
         "fantasyAverage": 6.42,
         "goals": 1,
         "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Kamara H.",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 5.82,
+        "fantasyAverage": 6.41,
+        "goals": 2,
+        "assists": 1,
         "yellowCards": 1,
         "redCards": 0,
         "ownGoals": null,
@@ -3112,27 +3091,6 @@
     },
     {
       "sourceId": null,
-      "name": "Adams A.",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 5.75,
-        "fantasyAverage": 6.35,
-        "goals": 2,
-        "assists": 0,
-        "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Bastoni",
       "club": "INT",
       "profileUrl": null,
@@ -3207,6 +3165,48 @@
         "fantasyAverage": 6.33,
         "goals": 0,
         "assists": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Palma",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 6,
+        "ratedMatches": 6,
+        "averageRating": 5.92,
+        "fantasyAverage": 6.33,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Adams A.",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 5.77,
+        "fantasyAverage": 6.32,
+        "goals": 2,
+        "assists": 0,
         "yellowCards": 0,
         "redCards": 0,
         "ownGoals": null,
@@ -3490,6 +3490,48 @@
     },
     {
       "sourceId": null,
+      "name": "Basic",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.94,
+        "fantasyAverage": 6.25,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Perez K.",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 6.09,
+        "fantasyAverage": 6.23,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 3,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Provstgaard",
       "club": "LAZ",
       "profileUrl": null,
@@ -3628,27 +3670,6 @@
         "goals": 0,
         "assists": 2,
         "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Zaniolo",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 5,
-        "ratedMatches": 5,
-        "averageRating": 5.8,
-        "fantasyAverage": 6.2,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 2,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -3910,27 +3931,6 @@
     },
     {
       "sourceId": null,
-      "name": "Abankwah",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 9,
-        "ratedMatches": 9,
-        "averageRating": 5.89,
-        "fantasyAverage": 6.17,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Busio",
       "club": "VEN",
       "profileUrl": null,
@@ -4073,6 +4073,27 @@
         "ownGoals": null,
         "penaltiesScored": 1,
         "penaltiesTotal": 2
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Abankwah",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 10,
+        "ratedMatches": 10,
+        "averageRating": 5.9,
+        "fantasyAverage": 6.15,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
       },
       "matchdays": []
     },
@@ -4225,6 +4246,27 @@
     },
     {
       "sourceId": null,
+      "name": "Mazzocchi",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 5,
+        "ratedMatches": 5,
+        "averageRating": 6,
+        "fantasyAverage": 6.1,
+        "goals": 0,
+        "assists": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Doig",
       "club": "SAS",
       "profileUrl": null,
@@ -4298,6 +4340,27 @@
         "averageRating": 6.25,
         "fantasyAverage": 6.08,
         "goals": 0,
+        "assists": 0,
+        "yellowCards": 2,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Zaniolo",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 6,
+        "ratedMatches": 6,
+        "averageRating": 5.75,
+        "fantasyAverage": 6.08,
+        "goals": 1,
         "assists": 0,
         "yellowCards": 2,
         "redCards": 0,
@@ -4918,27 +4981,6 @@
     },
     {
       "sourceId": null,
-      "name": "Mazzocchi",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 4,
-        "ratedMatches": 4,
-        "averageRating": 6,
-        "fantasyAverage": 6,
-        "goals": 0,
-        "assists": 1,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Neres",
       "club": "NAP",
       "profileUrl": null,
@@ -5065,55 +5107,13 @@
     },
     {
       "sourceId": null,
-      "name": "Piotrowski",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.71,
-        "fantasyAverage": 6,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 2,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Davis K.",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 9,
-        "ratedMatches": 9,
-        "averageRating": 5.83,
-        "fantasyAverage": 6,
-        "goals": 0,
-        "assists": 2,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Yeboah J.",
       "club": "VEN",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
+        "appearances": 11,
+        "ratedMatches": 11,
         "averageRating": 6,
         "fantasyAverage": 6,
         "goals": 1,
@@ -5506,6 +5506,27 @@
     },
     {
       "sourceId": null,
+      "name": "Davis K.",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 10,
+        "ratedMatches": 10,
+        "averageRating": 5.8,
+        "fantasyAverage": 5.95,
+        "goals": 0,
+        "assists": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Kouadio",
       "club": "MON",
       "profileUrl": null,
@@ -5540,6 +5561,27 @@
         "assists": 0,
         "yellowCards": 1,
         "redCards": 1,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Piotrowski",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.69,
+        "fantasyAverage": 5.94,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 2,
+        "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
         "penaltiesTotal": 0
@@ -5800,6 +5842,27 @@
     },
     {
       "sourceId": null,
+      "name": "Haps",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.81,
+        "fantasyAverage": 5.88,
+        "goals": 0,
+        "assists": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Valdepenas",
       "club": "FIO",
       "profileUrl": null,
@@ -5863,27 +5926,6 @@
     },
     {
       "sourceId": null,
-      "name": "Haps",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.79,
-        "fantasyAverage": 5.86,
-        "goals": 0,
-        "assists": 1,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Kalulu",
       "club": "JUV",
       "profileUrl": null,
@@ -5917,27 +5959,6 @@
         "goals": 0,
         "assists": 0,
         "yellowCards": 3,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Karlstrom",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 5.75,
-        "fantasyAverage": 5.85,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 4,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -6052,6 +6073,27 @@
     },
     {
       "sourceId": null,
+      "name": "Solet",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 6,
+        "ratedMatches": 6,
+        "averageRating": 5.83,
+        "fantasyAverage": 5.83,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Forson O.",
       "club": "MON",
       "profileUrl": null,
@@ -6064,6 +6106,27 @@
         "goals": 0,
         "assists": 0,
         "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Karlstrom",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 5.73,
+        "fantasyAverage": 5.82,
+        "goals": 1,
+        "assists": 0,
+        "yellowCards": 4,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -6262,27 +6325,6 @@
     },
     {
       "sourceId": null,
-      "name": "Solet",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 5,
-        "ratedMatches": 5,
-        "averageRating": 5.8,
-        "fantasyAverage": 5.8,
-        "goals": 0,
-        "assists": 0,
-        "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Helgason",
       "club": "VEN",
       "profileUrl": null,
@@ -6295,27 +6337,6 @@
         "goals": 0,
         "assists": 0,
         "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Perez K.",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 5.95,
-        "fantasyAverage": 5.8,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 3,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -6955,27 +6976,6 @@
     },
     {
       "sourceId": null,
-      "name": "Basic",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.79,
-        "fantasyAverage": 5.71,
-        "goals": 1,
-        "assists": 0,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Theate",
       "club": "BOL",
       "profileUrl": null,
@@ -7354,48 +7354,6 @@
     },
     {
       "sourceId": null,
-      "name": "Chakvetadze",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.64,
-        "fantasyAverage": 5.64,
-        "goals": 0,
-        "assists": 0,
-        "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Unai Gomez",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.5,
-        "fantasyAverage": 5.64,
-        "goals": 0,
-        "assists": 1,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Foe Ondoa",
       "club": "MON",
       "profileUrl": null,
@@ -7501,6 +7459,27 @@
     },
     {
       "sourceId": null,
+      "name": "Unai Gomez",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.5,
+        "fantasyAverage": 5.62,
+        "goals": 0,
+        "assists": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Rrahmani Al.",
       "club": "VEN",
       "profileUrl": null,
@@ -7564,6 +7543,27 @@
     },
     {
       "sourceId": null,
+      "name": "Juan Jesus",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.81,
+        "fantasyAverage": 5.62,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 3,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Bakoune",
       "club": "MON",
       "profileUrl": null,
@@ -7606,18 +7606,18 @@
     },
     {
       "sourceId": null,
-      "name": "Vojvoda",
-      "club": "UDI",
+      "name": "Sohm",
+      "club": "VEN",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
         "appearances": 10,
         "ratedMatches": 10,
-        "averageRating": 5.6,
+        "averageRating": 5.65,
         "fantasyAverage": 5.6,
         "goals": 0,
-        "assists": 0,
-        "yellowCards": 0,
+        "assists": 1,
+        "yellowCards": 3,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -7636,6 +7636,27 @@
         "ratedMatches": 5,
         "averageRating": 5.6,
         "fantasyAverage": 5.6,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Vojvoda",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 5.59,
+        "fantasyAverage": 5.59,
         "goals": 0,
         "assists": 0,
         "yellowCards": 0,
@@ -7690,39 +7711,18 @@
     },
     {
       "sourceId": null,
-      "name": "Juan Jesus",
-      "club": "VEN",
+      "name": "Chakvetadze",
+      "club": "UDI",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.79,
-        "fantasyAverage": 5.57,
-        "goals": 0,
-        "assists": 0,
-        "yellowCards": 3,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Sohm",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 9,
-        "ratedMatches": 9,
-        "averageRating": 5.61,
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.56,
         "fantasyAverage": 5.56,
         "goals": 0,
-        "assists": 1,
-        "yellowCards": 3,
+        "assists": 0,
+        "yellowCards": 0,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -8572,6 +8572,27 @@
     },
     {
       "sourceId": null,
+      "name": "Kabasele",
+      "club": "UDI",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 7,
+        "ratedMatches": 7,
+        "averageRating": 5.43,
+        "fantasyAverage": 5.43,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Folorunsho",
       "club": "MON",
       "profileUrl": null,
@@ -8761,27 +8782,6 @@
     },
     {
       "sourceId": null,
-      "name": "Kabasele",
-      "club": "UDI",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 6,
-        "ratedMatches": 6,
-        "averageRating": 5.33,
-        "fantasyAverage": 5.33,
-        "goals": 0,
-        "assists": 0,
-        "yellowCards": 0,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
       "name": "Bella-Kotchap",
       "club": "VEN",
       "profileUrl": null,
@@ -8882,27 +8882,6 @@
         "ownGoals": null,
         "penaltiesScored": 0,
         "penaltiesTotal": 1
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Moreno M.",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 8,
-        "ratedMatches": 8,
-        "averageRating": 5.69,
-        "fantasyAverage": 5.25,
-        "goals": 0,
-        "assists": 0,
-        "yellowCards": 3,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
       },
       "matchdays": []
     },
@@ -9046,6 +9025,27 @@
         "goals": 0,
         "assists": 0,
         "yellowCards": 3,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Halhal",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 8,
+        "ratedMatches": 8,
+        "averageRating": 5.69,
+        "fantasyAverage": 5.12,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 1,
         "redCards": 0,
         "ownGoals": null,
         "penaltiesScored": 0,
@@ -9328,6 +9328,27 @@
     },
     {
       "sourceId": null,
+      "name": "Moreno M.",
+      "club": "VEN",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 9,
+        "ratedMatches": 9,
+        "averageRating": 5.61,
+        "fantasyAverage": 5,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 3,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
       "name": "Tour&#xE8; I.",
       "club": "MON",
       "profileUrl": null,
@@ -9358,27 +9379,6 @@
         "ratedMatches": 6,
         "averageRating": 5.42,
         "fantasyAverage": 5,
-        "goals": 0,
-        "assists": 0,
-        "yellowCards": 1,
-        "redCards": 0,
-        "ownGoals": null,
-        "penaltiesScored": 0,
-        "penaltiesTotal": 0
-      },
-      "matchdays": []
-    },
-    {
-      "sourceId": null,
-      "name": "Halhal",
-      "club": "VEN",
-      "profileUrl": null,
-      "avatarUrl": null,
-      "seasonStats": {
-        "appearances": 7,
-        "ratedMatches": 7,
-        "averageRating": 5.57,
-        "fantasyAverage": 4.93,
         "goals": 0,
         "assists": 0,
         "yellowCards": 1,
@@ -9522,10 +9522,10 @@
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 6.3,
-        "fantasyAverage": 4.6,
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 6.32,
+        "fantasyAverage": 4.68,
         "goals": 0,
         "assists": 0,
         "yellowCards": 0,
@@ -9690,10 +9690,10 @@
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
-        "appearances": 10,
-        "ratedMatches": 10,
-        "averageRating": 5.85,
-        "fantasyAverage": 3.85,
+        "appearances": 11,
+        "ratedMatches": 11,
+        "averageRating": 5.82,
+        "fantasyAverage": 3.82,
         "goals": 0,
         "assists": 0,
         "yellowCards": 0,
