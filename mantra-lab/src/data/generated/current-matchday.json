@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T04:30:33.353Z",
+  "generatedAt": "2026-11-12T09:12:45.968Z",
   "season": "2026/2027",
   "matchday": 12,
   "fixtures": [
@@ -876,26 +876,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::3c26ed095339412792451f33565fba12",
-      "name": "Foe-Ondoa",
-      "club": "Monza",
-      "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
-      "fixtureId": "serie-a::Football_Match::b77c1f1eabe14d7985b53e7693bc5eab",
-      "sampleGames": 8,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 77.63888888888889,
-        "recentForm": 50,
-        "opponentContext": 78,
-        "bonusPotential": 40.07155635062612,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 37.704830053667266,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::18ccff309d1c46efbab30d302ece28e7",
       "name": "Kamara",
       "club": "Udinese",
@@ -911,6 +891,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 40.847513812154695,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::3c26ed095339412792451f33565fba12",
+      "name": "Foe-Ondoa",
+      "club": "Monza",
+      "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
+      "fixtureId": "serie-a::Football_Match::b77c1f1eabe14d7985b53e7693bc5eab",
+      "sampleGames": 8,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 77.63888888888889,
+        "recentForm": 50,
+        "opponentContext": 78,
+        "bonusPotential": 40.07155635062612,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 37.704830053667266,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -2716,6 +2716,26 @@
       }
     },
     {
+      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
+      "name": "Raimondo",
+      "club": "Frosinone",
+      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
+      "fixtureId": "serie-a::Football_Match::1d5cd05d98264f0988acc1f02a51b0ce",
+      "sampleGames": 10,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 89.44444444444444,
+        "recentForm": 50,
+        "opponentContext": 51.6,
+        "bonusPotential": 75.24844720496895,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 45.33043478260869,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
       "id": "serie-a::Football_Player::b629fb0c40f34d83864423c077fc8e9a",
       "name": "Calvani",
       "club": "Frosinone",
@@ -2751,26 +2771,6 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 35,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
-      "id": "serie-a::Football_Player::48931447190a4915baacb0c737b5ec04",
-      "name": "Raimondo",
-      "club": "Frosinone",
-      "teamId": "serie-a::Football_Team::b283fcc0aeda401bb081fcd764e290db",
-      "fixtureId": "serie-a::Football_Match::1d5cd05d98264f0988acc1f02a51b0ce",
-      "sampleGames": 10,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 89.44444444444444,
-        "recentForm": 50,
-        "opponentContext": 51.6,
-        "bonusPotential": 75.24844720496895,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 45.33043478260869,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -3996,26 +3996,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::3c5522df52c945a19b271eb0aeb3d56b",
-      "name": "Bernasconi",
-      "club": "Atalanta",
-      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
-      "fixtureId": "serie-a::Football_Match::adf3ede422464ba7bbdb8f1c90332b29",
-      "sampleGames": 9,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 80.86419753086419,
-        "recentForm": 50,
-        "opponentContext": 46.8,
-        "bonusPotential": 35,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 37.30839694656488,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::adfb707431614df5aeec9b486a888815",
       "name": "Carnesecchi",
       "club": "Atalanta",
@@ -4031,6 +4011,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 35,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::3c5522df52c945a19b271eb0aeb3d56b",
+      "name": "Bernasconi",
+      "club": "Atalanta",
+      "teamId": "serie-a::Football_Team::b5846a2413804c2e8cab8b773b18370a",
+      "fixtureId": "serie-a::Football_Match::adf3ede422464ba7bbdb8f1c90332b29",
+      "sampleGames": 9,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 80.86419753086419,
+        "recentForm": 50,
+        "opponentContext": 46.8,
+        "bonusPotential": 35,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 37.30839694656488,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5276,26 +5276,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
-      "name": "Bernardeschi",
-      "club": "Bologna",
-      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
-      "fixtureId": "serie-a::Football_Match::92e5cb913a5f4c638e51243ad1ccc94a",
-      "sampleGames": 11,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 84.14141414141415,
-        "recentForm": 50,
-        "opponentContext": 90,
-        "bonusPotential": 49.585834333733494,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 46.79831932773109,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::d9a23c8a0b9c4865b2397dc66bca78ff",
       "name": "Piccoli",
       "club": "Bologna",
@@ -5311,6 +5291,26 @@
         "setPieces": 50,
         "homeAwayContext": 60,
         "tacticalOpportunity": 37.93023255813954,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::d3dc2a33059d45cf93bf965b8610b46b",
+      "name": "Bernardeschi",
+      "club": "Bologna",
+      "teamId": "serie-a::Football_Team::4af71b35aab34ad5a7d06148abe66ad6",
+      "fixtureId": "serie-a::Football_Match::92e5cb913a5f4c638e51243ad1ccc94a",
+      "sampleGames": 11,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 84.14141414141415,
+        "recentForm": 50,
+        "opponentContext": 90,
+        "bonusPotential": 49.585834333733494,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 46.79831932773109,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -5876,26 +5876,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::72d8637dba5842c2a7f8e74dd686ea81",
-      "name": "Hermoso",
-      "club": "Roma",
-      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
-      "fixtureId": "serie-a::Football_Match::97ef80e0aff84867ae6f6c53b2be31e5",
-      "sampleGames": 10,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 84.22222222222221,
-        "recentForm": 50,
-        "opponentContext": 80.4,
-        "bonusPotential": 45.68601583113457,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 36.99472295514512,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::ce4b4184d61f402698ac6c9e954d2b31",
       "name": "Dybala",
       "club": "Roma",
@@ -5911,6 +5891,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 43.77369439071566,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::72d8637dba5842c2a7f8e74dd686ea81",
+      "name": "Hermoso",
+      "club": "Roma",
+      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
+      "fixtureId": "serie-a::Football_Match::97ef80e0aff84867ae6f6c53b2be31e5",
+      "sampleGames": 10,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 84.22222222222221,
+        "recentForm": 50,
+        "opponentContext": 80.4,
+        "bonusPotential": 45.68601583113457,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 36.99472295514512,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -10140,13 +10140,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-11T04:30:33.353Z",
+      "retrievedAt": "2026-11-12T09:12:45.968Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-11T04:30:33.353Z",
+      "retrievedAt": "2026-11-12T09:12:45.968Z",
       "status": "not-yet-available"
     }
   ]
