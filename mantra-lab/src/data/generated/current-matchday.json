@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-12T09:12:45.968Z",
+  "generatedAt": "2026-11-13T11:50:06.088Z",
   "season": "2026/2027",
   "matchday": 12,
   "fixtures": [
@@ -5876,26 +5876,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::ce4b4184d61f402698ac6c9e954d2b31",
-      "name": "Dybala",
-      "club": "Roma",
-      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
-      "fixtureId": "serie-a::Football_Match::97ef80e0aff84867ae6f6c53b2be31e5",
-      "sampleGames": 6,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 95.74074074074075,
-        "recentForm": 50,
-        "opponentContext": 80.4,
-        "bonusPotential": 56.93423597678917,
-        "setPieces": 50,
-        "homeAwayContext": 50,
-        "tacticalOpportunity": 43.77369439071566,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::72d8637dba5842c2a7f8e74dd686ea81",
       "name": "Hermoso",
       "club": "Roma",
@@ -5911,6 +5891,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 36.99472295514512,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::ce4b4184d61f402698ac6c9e954d2b31",
+      "name": "Dybala",
+      "club": "Roma",
+      "teamId": "serie-a::Football_Team::8ddc09c1aa73448da2dff953edd95d82",
+      "fixtureId": "serie-a::Football_Match::97ef80e0aff84867ae6f6c53b2be31e5",
+      "sampleGames": 6,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 95.74074074074075,
+        "recentForm": 50,
+        "opponentContext": 80.4,
+        "bonusPotential": 56.93423597678917,
+        "setPieces": 50,
+        "homeAwayContext": 50,
+        "tacticalOpportunity": 43.77369439071566,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -10140,13 +10140,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-12T09:12:45.968Z",
+      "retrievedAt": "2026-11-13T11:50:06.088Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-12T09:12:45.968Z",
+      "retrievedAt": "2026-11-13T11:50:06.088Z",
       "status": "not-yet-available"
     }
   ]
