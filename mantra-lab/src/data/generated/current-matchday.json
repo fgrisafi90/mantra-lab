@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T16:46:43.865Z",
+  "generatedAt": "2026-11-16T18:45:21.893Z",
   "season": "2026/2027",
   "matchday": 12,
   "fixtures": [
@@ -876,26 +876,6 @@
       }
     },
     {
-      "id": "serie-a::Football_Player::3c26ed095339412792451f33565fba12",
-      "name": "Foe-Ondoa",
-      "club": "Monza",
-      "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
-      "fixtureId": "serie-a::Football_Match::b77c1f1eabe14d7985b53e7693bc5eab",
-      "sampleGames": 8,
-      "signals": {
-        "availability": 72,
-        "expectedMinutes": 77.63888888888889,
-        "recentForm": 50,
-        "opponentContext": 78,
-        "bonusPotential": 40.07155635062612,
-        "setPieces": 50,
-        "homeAwayContext": 60,
-        "tacticalOpportunity": 37.704830053667266,
-        "unavailable": false,
-        "majorDoubt": false
-      }
-    },
-    {
       "id": "serie-a::Football_Player::18ccff309d1c46efbab30d302ece28e7",
       "name": "Kamara",
       "club": "Udinese",
@@ -911,6 +891,26 @@
         "setPieces": 50,
         "homeAwayContext": 50,
         "tacticalOpportunity": 40.847513812154695,
+        "unavailable": false,
+        "majorDoubt": false
+      }
+    },
+    {
+      "id": "serie-a::Football_Player::3c26ed095339412792451f33565fba12",
+      "name": "Foe-Ondoa",
+      "club": "Monza",
+      "teamId": "serie-a::Football_Team::9ba470f39580450fac7654956ba574fa",
+      "fixtureId": "serie-a::Football_Match::b77c1f1eabe14d7985b53e7693bc5eab",
+      "sampleGames": 8,
+      "signals": {
+        "availability": 72,
+        "expectedMinutes": 77.63888888888889,
+        "recentForm": 50,
+        "opponentContext": 78,
+        "bonusPotential": 40.07155635062612,
+        "setPieces": 50,
+        "homeAwayContext": 60,
+        "tacticalOpportunity": 37.704830053667266,
         "unavailable": false,
         "majorDoubt": false
       }
@@ -10140,13 +10140,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-15T16:46:43.865Z",
+      "retrievedAt": "2026-11-16T18:45:21.893Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-15T16:46:43.865Z",
+      "retrievedAt": "2026-11-16T18:45:21.893Z",
       "status": "not-yet-available"
     }
   ]
