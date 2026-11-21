@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T00:49:13.376Z",
+  "generatedAt": "2026-11-21T04:08:00.275Z",
   "season": "2026/2027",
   "matchday": 12,
   "fixtures": [
@@ -10140,13 +10140,13 @@
     {
       "name": "Lega Serie A SDP",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-20T00:49:13.376Z",
+      "retrievedAt": "2026-11-21T04:08:00.275Z",
       "status": "ok"
     },
     {
       "name": "Lega Serie A lineups",
       "url": "https://api-sdp.legaseriea.it/v1/serie-a/football",
-      "retrievedAt": "2026-11-20T00:49:13.376Z",
+      "retrievedAt": "2026-11-21T04:08:00.275Z",
       "status": "not-yet-available"
     }
   ]
