@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-25T04:18:18.551Z",
+  "generatedAt": "2026-11-25T15:38:58.483Z",
   "season": "2026/2027",
   "players": [
     {
@@ -12648,6 +12648,69 @@
       "sourceId": null,
       "name": "Neto",
       "club": "JUV",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 0,
+        "ratedMatches": 0,
+        "averageRating": 0,
+        "fantasyAverage": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Pellegri",
+      "club": "TOR",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 0,
+        "ratedMatches": 0,
+        "averageRating": 0,
+        "fantasyAverage": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Sonzogni",
+      "club": "ATA",
+      "profileUrl": null,
+      "avatarUrl": null,
+      "seasonStats": {
+        "appearances": 0,
+        "ratedMatches": 0,
+        "averageRating": 0,
+        "fantasyAverage": 0,
+        "goals": 0,
+        "assists": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "ownGoals": null,
+        "penaltiesScored": 0,
+        "penaltiesTotal": 0
+      },
+      "matchdays": []
+    },
+    {
+      "sourceId": null,
+      "name": "Grandu",
+      "club": "CAG",
       "profileUrl": null,
       "avatarUrl": null,
       "seasonStats": {
